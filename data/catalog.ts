@@ -33,25 +33,10 @@ export const recruitmentRecords: RecruitmentRecord[] = [
   { id: 'rec-cmcc-hb-2027', companyId: 'cmcc-hb', cohort: 2027, status: '开放中', locations: ['湖北全省'], sourceIds: ['src-cmcc-career'], firstSeenAt: checked, lastVerifiedAt: checked, confidence: '已核验', regionScope: '湖北省内' },
 ];
 
-export const ownershipEvidence: OwnershipEvidence[] = [
-  { id: 'ev-hubei-sasac-list', title: '湖北省属企业公开名录', publisher: '湖北省国资委', url: sources[0].url, sourceType: '监管披露', verifiedAt: checked },
-  { id: 'ev-wuhan-sasac-list', title: '武汉市国资委出资企业名单', publisher: '武汉市国资委', url: sources[1].url, sourceType: '监管披露', verifiedAt: checked },
-];
-const channel = (name: string, url: string) => [{ label: `${name}招聘入口`, type: '集团通用入口' as const, match: '集团兜底' as const, status: '状态待确认' as const, url, verifiedAt: checked }];
-const makeNode = (id: string, name: string, level: number, category: string, sourceUrl: string, careerUrl = ''): OwnershipNode => ({ id, name, category, level, entityKind: level === 0 ? '监管机构' : '集团', locationTags: ['湖北全省'], controlType: '履行出资人职责', registeredLocation: level ? '湖北省' : undefined, verifiedAt: checked, verificationStatus: '已核验', sourceUrl, recruitmentChannels: level ? channel(name, careerUrl) : [] });
-const hubeiSasac = makeNode('hubei-sasac', '湖北省人民政府国有资产监督管理委员会', 0, '省级监管机构', sources[0].url);
-const wuhanSasac = makeNode('wuhan-sasac', '武汉市人民政府国有资产监督管理委员会', 0, '市级监管机构', sources[1].url);
-hubeiSasac.children = [makeNode('hbjt', companies[0].name, 1, '湖北省属国企', sources[0].url, companies[0].channels[0].url), makeNode('hbui', companies[1].name, 1, '湖北省属国企', sources[0].url, companies[1].channels[0].url), makeNode('hblv', companies[2].name, 1, '湖北省属国企', sources[0].url, companies[2].channels[0].url), makeNode('cjcy', companies[3].name, 1, '湖北省属国企', sources[0].url, companies[3].channels[0].url)];
-wuhanSasac.children = [makeNode('whmetro', companies[5].name, 1, '武汉市属国企', sources[1].url, companies[5].channels[0].url), makeNode('whcf', companies[6].name, 1, '武汉市属国企', sources[1].url, companies[6].channels[0].url)];
-export const ownershipTrees: OwnershipNode[] = [hubeiSasac, wuhanSasac];
-export const ownershipCoverageSets: OwnershipCoverageSet[] = [
-  { id: 'coverage-hubei-sasac', parentId: 'hubei-sasac', label: '湖北省属企业首批核验集', scope: '湖北省国资委公开名录', asOf: checked, targetLevel: 1, officialDisclosedTotal: null, expectedNodeIds: ['hbjt', 'hbui', 'hblv', 'cjcy'], pendingNodeIds: [], completenessStatus: '已核验并持续补充', sourceUrls: [sources[0].url] },
-  { id: 'coverage-wuhan-sasac', parentId: 'wuhan-sasac', label: '武汉市属企业首批核验集', scope: '武汉市国资委公开名录', asOf: checked, targetLevel: 1, officialDisclosedTotal: null, expectedNodeIds: ['whmetro', 'whcf'], pendingNodeIds: [], completenessStatus: '已核验并持续补充', sourceUrls: [sources[1].url] },
-];
-export const ownershipEdges: OwnershipEdge[] = [
-  ...hubeiSasac.children!.map((child) => ({ id: `edge-hubei-${child.id}`, parentId: hubeiSasac.id, childId: child.id, controlType: '履行出资人职责' as const, controlBasis: '湖北省国资委公开省属企业名录', evidenceIds: ['ev-hubei-sasac-list'], asOf: checked, verificationStatus: '已核验' as const })),
-  ...wuhanSasac.children!.map((child) => ({ id: `edge-wuhan-${child.id}`, parentId: wuhanSasac.id, childId: child.id, controlType: '履行出资人职责' as const, controlBasis: '武汉市国资委公开出资企业名单', evidenceIds: ['ev-wuhan-sasac-list'], asOf: checked, verificationStatus: '已核验' as const })),
-];
+export const ownershipEvidence: OwnershipEvidence[] = [];
+export const ownershipTrees: OwnershipNode[] = [];
+export const ownershipCoverageSets: OwnershipCoverageSet[] = [];
+export const ownershipEdges: OwnershipEdge[] = [];
 export const awards: AwardEntry[] = [
   { id: 'employer-hbjt-2025', companyId: 'hbjt', year: 2025, listName: '湖北重点雇主观察（非评奖）', awardTier: '省属重点企业', hubeiBasis: '湖北省国资委公开省属企业名录', sourceUrl: sources[0].url },
   { id: 'employer-hbui-2025', companyId: 'hbui', year: 2025, listName: '湖北重点雇主观察（非评奖）', awardTier: '省属重点企业', hubeiBasis: '湖北省国资委公开省属企业名录', sourceUrl: sources[0].url },

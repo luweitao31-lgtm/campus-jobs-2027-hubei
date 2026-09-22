@@ -20,7 +20,10 @@ const foreignEntries = directory.entries.filter((entry) => entry.nature === '外
 const foreignHubeiEntries = foreignEntries.filter((entry) => entry.regionScope === '湖北省内');
 const foreignOpenEntries = foreignEntries.filter((entry) => entry.status === '开放中');
 const foreignVerifiedEntries = foreignEntries.filter((entry) => entry.confidence === '已核验');
+const registrySourceIds = new Set(registry.sources.map((source) => source.id));
 if (directory.verifiedCount !== verifiedEntries.length || directory.pendingCount !== pendingEntries.length) errors.push('目录核验状态统计不一致');
+if (directory.entries.length <= 50) errors.push('正式目录企业数量必须保持在50家以上');
+if (directory.pendingCount !== 0 || directory.entries.some((entry) => entry.status === '待确认' || entry.confidence === '待确认')) errors.push('正式目录不得保留待确认企业');
 if (directory.hubeiCount !== hubeiEntries.length || directory.hubeiShare !== Number((hubeiEntries.length / directory.entries.length).toFixed(4))) errors.push('湖北目录统计不一致');
 if (directory.foreignCount !== foreignEntries.length || directory.foreignOpenCount !== foreignOpenEntries.length || directory.foreignVerifiedCount !== foreignVerifiedEntries.length || directory.foreignHubeiCount !== foreignHubeiEntries.length || directory.foreignHubeiShare !== Number((foreignHubeiEntries.length / foreignEntries.length).toFixed(4))) errors.push('外企统计不一致');
 if (directory.hubeiShare < regionConfig.localShareTarget) errors.push('主目录湖北占比低于70%');
@@ -30,6 +33,7 @@ for (const entry of directory.entries) {
   if (entry.regionScope === '全国可投' && !entry.locations.includes('全国')) errors.push(`${entry.name} 缺少全国可投地点证据`);
   if (entry.regionScope === '湖北省内' && !entry.locations.some((location) => /湖北|武汉|襄阳|宜昌|十堰|荆州|黄石/.test(location))) errors.push(`${entry.name} 缺少湖北地点证据`);
   if (entry.status === '开放中' && entry.confidence !== '已核验') errors.push(`${entry.name} 未核验却标记开放中`);
+  if (!entry.sourceIds.length || entry.sourceIds.some((id) => !registrySourceIds.has(id))) errors.push(`${entry.name} 引用了不存在的核验来源`);
   if (entry.channel.type === '第三方公告' || entry.channel.type === '第三方汇总') {
     if (entry.confidence !== '待确认') errors.push(`${entry.name} 第三方单来源不得标记已核验`);
   }
@@ -48,6 +52,7 @@ for (const edge of ownershipEdges) {
 for (const set of ownershipCoverageSets) if (!nodeIds.has(set.parentId) || set.expectedNodeIds.some((id) => !nodeIds.has(id))) errors.push(`${set.id} 覆盖清单引用无效`);
 if (hubeiRecruitmentOpenings.length !== hubeiRecruitmentSnapshot.jobCount || hubeiHiringUnits.length !== hubeiRecruitmentSnapshot.hiringUnitCount) errors.push('湖北岗位快照统计不一致');
 for (const opening of hubeiRecruitmentOpenings) if (!unitIds.has(opening.hiringUnitId) || !/湖北|武汉|襄阳|宜昌|十堰|荆州|黄石/.test(opening.workLocation)) errors.push(`${opening.id} 用人单位或地域无效`);
+for (const opening of hubeiRecruitmentOpenings) if (opening.status !== '开放中') errors.push(`${opening.id} 未确认开放，不得进入正式岗位库`);
 for (const award of awards) if (!award.hubeiBasis || !award.sourceUrl) errors.push(`${award.id} 缺少湖北关联依据`);
 for (const company of companies) if (company.locations.some((location) => /广西|南宁/.test(location))) errors.push(`${company.name} 含广西地点残留`);
 

@@ -223,7 +223,7 @@ export function CareerDashboard() {
     </div>
 
     <div className="mb-4 grid gap-3 md:grid-cols-3">
-      <ExpertCard icon={BriefcaseBusiness} title="秋招情报组" detail={`定位 ${jobs.length} 个官方岗位入口，当前状态均待确认`} />
+      <ExpertCard icon={BriefcaseBusiness} title="秋招情报组" detail={`定位 ${jobs.length} 个已核验开放的官方岗位入口`} />
       <ExpertCard icon={Network} title="央国企链组" detail="核验集团、法人主体与实际用人单位" />
       <ExpertCard icon={Award} title="最佳雇主组" detail={`提供 ${awards.length} 条雇主质量与湖北关联证据`} />
     </div>

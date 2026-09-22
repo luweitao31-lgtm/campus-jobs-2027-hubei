@@ -3,7 +3,7 @@ import { awards, companies, hubeiHiringUnits, hubeiRecruitmentOpenings, hubeiRec
 import { isAllowedLocationLabel, regionConfig } from '../lib/region.ts';
 import type { RecruitmentDirectoryEntry } from '../lib/types.ts';
 
-const directory = JSON.parse(await readFile('data/recruitment-directory.json', 'utf8')) as { totalCount: number; hubeiCount: number; hubeiShare: number; foreignCount: number; foreignHubeiCount: number; foreignHubeiShare: number; entries: RecruitmentDirectoryEntry[] };
+const directory = JSON.parse(await readFile('data/recruitment-directory.json', 'utf8')) as { totalCount: number; verifiedCount: number; pendingCount: number; hubeiCount: number; hubeiShare: number; foreignCount: number; foreignOpenCount: number; foreignVerifiedCount: number; foreignHubeiCount: number; foreignHubeiShare: number; entries: RecruitmentDirectoryEntry[] };
 const registry = JSON.parse(await readFile('data/source-registry.json', 'utf8')) as { sourcePolicy: { targetHubeiShare: number }; excludedSources: string[]; sources: Array<{ id: string; name: string; url: string; collect: boolean; locationScope?: string[] }> };
 const errors: string[] = [];
 const flatten = (nodes: typeof ownershipTrees): typeof ownershipTrees => nodes.flatMap((node) => [node, ...flatten(node.children ?? [])]);
@@ -13,11 +13,16 @@ const evidenceIds = new Set(ownershipEvidence.map((item) => item.id));
 const unitIds = new Set(hubeiHiringUnits.map((unit) => unit.id));
 
 if (directory.totalCount !== directory.entries.length) errors.push('目录总数与条目数不一致');
+const verifiedEntries = directory.entries.filter((entry) => entry.confidence === '已核验');
+const pendingEntries = directory.entries.filter((entry) => entry.status === '待确认');
 const hubeiEntries = directory.entries.filter((entry) => entry.regionScope === '湖北省内');
 const foreignEntries = directory.entries.filter((entry) => entry.nature === '外企');
 const foreignHubeiEntries = foreignEntries.filter((entry) => entry.regionScope === '湖北省内');
+const foreignOpenEntries = foreignEntries.filter((entry) => entry.status === '开放中');
+const foreignVerifiedEntries = foreignEntries.filter((entry) => entry.confidence === '已核验');
+if (directory.verifiedCount !== verifiedEntries.length || directory.pendingCount !== pendingEntries.length) errors.push('目录核验状态统计不一致');
 if (directory.hubeiCount !== hubeiEntries.length || directory.hubeiShare !== Number((hubeiEntries.length / directory.entries.length).toFixed(4))) errors.push('湖北目录统计不一致');
-if (directory.foreignCount !== foreignEntries.length || directory.foreignHubeiCount !== foreignHubeiEntries.length || directory.foreignHubeiShare !== Number((foreignHubeiEntries.length / foreignEntries.length).toFixed(4))) errors.push('外企湖北统计不一致');
+if (directory.foreignCount !== foreignEntries.length || directory.foreignOpenCount !== foreignOpenEntries.length || directory.foreignVerifiedCount !== foreignVerifiedEntries.length || directory.foreignHubeiCount !== foreignHubeiEntries.length || directory.foreignHubeiShare !== Number((foreignHubeiEntries.length / foreignEntries.length).toFixed(4))) errors.push('外企统计不一致');
 if (directory.hubeiShare < regionConfig.localShareTarget) errors.push('主目录湖北占比低于70%');
 if (directory.foreignHubeiShare < regionConfig.localShareTarget) errors.push('外企目录湖北占比低于70%');
 for (const entry of directory.entries) {

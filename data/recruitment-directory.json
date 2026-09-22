@@ -1,74 +1,1396 @@
 {
-  "completedAt": "2026-09-22T00:00:00+08:00",
-  "baselineCount": 0,
-  "totalCount": 56,
-  "netNewCount": 56,
-  "verifiedCount": 14,
-  "pendingCount": 42,
-  "hubeiCount": 50,
-  "hubeiShare": 0.8929,
-  "foreignCount": 23,
-  "foreignOpenCount": 4,
-  "foreignVerifiedCount": 4,
-  "foreignNewCount": 23,
-  "foreignHubeiCount": 17,
-  "foreignHubeiShare": 0.7391,
+  "completedAt": "2026-09-22T12:00:00+08:00",
+  "baselineCount": 14,
+  "totalCount": 51,
+  "netNewCount": 37,
+  "verifiedCount": 51,
+  "pendingCount": 0,
+  "hubeiCount": 36,
+  "hubeiShare": 0.7059,
+  "foreignCount": 9,
+  "foreignOpenCount": 9,
+  "foreignVerifiedCount": 9,
+  "foreignNewCount": 5,
+  "foreignHubeiCount": 8,
+  "foreignHubeiShare": 0.8889,
   "entries": [
-    { "id": "dir-dfmc", "name": "东风汽车集团有限公司", "normalizedCompanyName": "东风汽车集团", "nature": "中央企业", "locations": ["湖北武汉", "湖北全省", "全国"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "东风校园招聘", "type": "企业官网", "url": "https://www.dfmc.com.cn/zhaopin/xiaoyuanzhaopin.html" }, "sourceIds": ["src-dfmc-career"], "sourceLabels": ["东风汽车校园招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-cmcc-hb", "name": "中国移动通信集团湖北有限公司", "normalizedCompanyName": "中国移动通信集团湖北", "nature": "央企子公司", "locations": ["湖北全省"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "中国移动招聘", "type": "集团招聘平台", "url": "https://job.10086.cn/" }, "sourceIds": ["src-cmcc-career"], "sourceLabels": ["中国移动招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbjt", "name": "湖北交通投资集团有限公司", "normalizedCompanyName": "湖北交通投资集团", "nature": "湖北省属国企", "locations": ["湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北交投官网", "type": "企业官网", "url": "https://www.hbtt.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbui", "name": "湖北联投集团有限公司", "normalizedCompanyName": "湖北联投集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北联投官网", "type": "企业官网", "url": "https://www.hbslft.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-cjcy", "name": "长江产业投资集团有限公司", "normalizedCompanyName": "长江产业投资集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "长江产业集团官网", "type": "企业官网", "url": "https://www.cjtouzi.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-whmetro", "name": "武汉地铁集团有限公司", "normalizedCompanyName": "武汉地铁集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "武汉地铁官网", "type": "企业官网", "url": "https://www.wuhanrt.com/" }, "sourceIds": ["src-wuhan-sasac"], "sourceLabels": ["武汉市国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-whcf", "name": "武汉城市发展集团有限公司", "normalizedCompanyName": "武汉城市发展集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "武汉城发官网", "type": "企业官网", "url": "https://www.whcfs.cn/" }, "sourceIds": ["src-wuhan-sasac"], "sourceLabels": ["武汉市国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-valeo", "name": "法雷奥中国", "normalizedCompanyName": "法雷奥中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "法雷奥招聘", "type": "企业官网", "url": "https://www.valeo.com/cn/找工作/" }, "sourceIds": ["src-valeo-career"], "sourceLabels": ["法雷奥招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-honeywell", "name": "霍尼韦尔中国", "normalizedCompanyName": "霍尼韦尔中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "霍尼韦尔招聘", "type": "企业官网", "url": "https://www.honeywell.com.cn/cn/zh/careers" }, "sourceIds": ["src-honeywell-career"], "sourceLabels": ["霍尼韦尔中国招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-cummins", "name": "康明斯中国", "normalizedCompanyName": "康明斯中国", "nature": "外企", "locations": ["湖北武汉", "湖北襄阳", "全国"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "康明斯 2027 武汉岗位", "type": "企业官网", "url": "https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/zh-CN/sites/CX_1/job/2437110/" }, "sourceIds": ["src-cummins-2027-official", "src-cummins-2027-91wllm"], "sourceLabels": ["康明斯官方 2027 武汉岗位", "武汉工商学院就业网"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-forvia", "name": "佛瑞亚中国", "normalizedCompanyName": "佛瑞亚中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "佛瑞亚招聘", "type": "企业官网", "url": "https://www.forvia.com/careers" }, "sourceIds": ["src-forvia-career"], "sourceLabels": ["佛瑞亚招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-lear", "name": "李尔中国", "normalizedCompanyName": "李尔中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "李尔招聘", "type": "企业官网", "url": "https://www.lear.com/careers" }, "sourceIds": ["src-lear-career"], "sourceLabels": ["李尔招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-webasto", "name": "伟巴斯特中国", "normalizedCompanyName": "伟巴斯特中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "伟巴斯特招聘", "type": "企业官网", "url": "https://www.webasto-group.com/en-int/career.html" }, "sourceIds": ["src-webasto-career"], "sourceLabels": ["伟巴斯特招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-bosch", "name": "博世中国", "normalizedCompanyName": "博世中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "博世招聘", "type": "企业官网", "url": "https://www.bosch.com.cn/careers/" }, "sourceIds": ["src-bosch-career"], "sourceLabels": ["博世中国校园招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbct", "name": "湖北文化旅游集团有限公司", "normalizedCompanyName": "湖北文化旅游集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北文旅集团官网", "type": "企业官网", "url": "http://www.hbctic.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbrail", "name": "湖北铁路集团有限公司", "normalizedCompanyName": "湖北铁路集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北铁路集团官网", "type": "企业官网", "url": "http://www.hbrailway.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbagri", "name": "湖北农业发展集团有限公司", "normalizedCompanyName": "湖北农业发展集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北农发集团官网", "type": "企业官网", "url": "https://www.hbnyfztz.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbht", "name": "湖北宏泰集团有限公司", "normalizedCompanyName": "湖北宏泰集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北宏泰集团官网", "type": "企业官网", "url": "http://www.hbhtgroup.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbairport", "name": "湖北机场集团有限公司", "normalizedCompanyName": "湖北机场集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北机场集团官网", "type": "企业官网", "url": "http://www.hbairport.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbport", "name": "湖北港口集团有限公司", "normalizedCompanyName": "湖北港口集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北港口集团官网", "type": "企业官网", "url": "http://www.hubeiport.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-hbqn", "name": "湖北清能投资发展集团有限公司", "normalizedCompanyName": "湖北清能投资发展集团", "nature": "湖北省属国企", "locations": ["湖北武汉", "湖北全省"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "湖北清能集团官网", "type": "企业官网", "url": "https://www.hbqntz.com/" }, "sourceIds": ["src-hubei-sasac"], "sourceLabels": ["湖北省国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-whii", "name": "武汉产业投资控股集团有限公司", "normalizedCompanyName": "武汉产业投资控股集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "武汉投控集团官网", "type": "企业官网", "url": "https://www.wiihg.com/" }, "sourceIds": ["src-wuhan-sasac"], "sourceLabels": ["武汉市国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-wuhanbus", "name": "武汉市公共交通集团有限责任公司", "normalizedCompanyName": "武汉公交集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "武汉公交集团官网", "type": "企业官网", "url": "http://www.wuhanbus.com/" }, "sourceIds": ["src-wuhan-sasac"], "sourceLabels": ["武汉市国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-whucg", "name": "武汉城市建设集团有限公司", "normalizedCompanyName": "武汉城市建设集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "武汉城建集团官网", "type": "企业官网", "url": "https://whucg.cn/" }, "sourceIds": ["src-wuhan-sasac"], "sourceLabels": ["武汉市国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-whct", "name": "武汉市城市建设投资开发集团有限公司", "normalizedCompanyName": "武汉城投集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "武汉城投集团官网", "type": "企业官网", "url": "http://www.zgwhct.cn/" }, "sourceIds": ["src-wuhan-sasac"], "sourceLabels": ["武汉市国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-whculture", "name": "武汉文化旅游集团有限公司", "normalizedCompanyName": "武汉文化旅游集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "武汉文旅集团名录", "type": "企业官网", "url": "https://gzw.wuhan.gov.cn/ztzl_69/ssqymd/" }, "sourceIds": ["src-wuhan-sasac"], "sourceLabels": ["武汉市国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-whag", "name": "武汉农业集团有限公司", "normalizedCompanyName": "武汉农业集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "武汉农业集团官网", "type": "企业官网", "url": "https://www.whagcg.com/" }, "sourceIds": ["src-wuhan-sasac"], "sourceLabels": ["武汉市国资委"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-whfhg", "name": "武汉金融控股（集团）有限公司", "normalizedCompanyName": "武汉金融控股集团", "nature": "武汉市属国企", "locations": ["湖北武汉"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "武汉金控 2027 校招公告", "type": "企业官网", "url": "https://job.lzu.edu.cn/html/74/article/2026/92317.html" }, "sourceIds": ["src-whfhg-2027-lzu", "src-whfhg-2027-gemu"], "sourceLabels": ["兰州大学就业网", "武汉格木教育招聘公告"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-cscec3", "name": "中建三局集团有限公司", "normalizedCompanyName": "中建三局集团", "nature": "央企子公司", "locations": ["湖北武汉", "全国"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "中国建筑校园招聘", "type": "集团招聘平台", "url": "https://recruit.cscec.com/recruit" }, "sourceIds": ["src-cscec-recruit", "src-cscec3-2027-hebut"], "sourceLabels": ["中国建筑校园招聘", "河北工业大学就业网"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-cict", "name": "中国信息通信科技集团有限公司", "normalizedCompanyName": "中国信科集团", "nature": "中央企业", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "中国信科集团官网", "type": "企业官网", "url": "https://www.cict.com/" }, "sourceIds": ["src-ncss"], "sourceLabels": ["国家大学生就业服务平台"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-cr11g", "name": "中铁十一局集团有限公司", "normalizedCompanyName": "中铁十一局集团", "nature": "央企子公司", "locations": ["湖北武汉", "全国"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "中铁十一局 2027 校招简章", "type": "企业官网", "url": "https://job.lzu.edu.cn/html/22/article/2026/91731.html" }, "sourceIds": ["src-cr11-2027-lzu", "src-cr11-2027-jlu"], "sourceLabels": ["兰州大学就业网", "吉林大学就业网"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-mbec", "name": "中铁大桥局集团有限公司", "normalizedCompanyName": "中铁大桥局集团", "nature": "央企子公司", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "中铁大桥局官网", "type": "企业官网", "url": "http://www.ztmbec.com/" }, "sourceIds": ["src-ncss"], "sourceLabels": ["国家大学生就业服务平台"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-sneb", "name": "中交第二航务工程局有限公司", "normalizedCompanyName": "中交二航局", "nature": "央企子公司", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "中交二航局官网", "type": "企业官网", "url": "https://www.sneb.com.cn/" }, "sourceIds": ["src-ncss"], "sourceLabels": ["国家大学生就业服务平台"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-mcc1", "name": "中国一冶集团有限公司", "normalizedCompanyName": "中国一冶集团", "nature": "央企子公司", "locations": ["湖北武汉", "全国"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "中国一冶 2027 秋招", "type": "企业官网", "url": "https://www.cfmcc.com/rlzy/zpxx/" }, "sourceIds": ["src-cfmcc-2027-official"], "sourceLabels": ["中国一冶招聘信息"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-cggc", "name": "中国葛洲坝集团有限公司", "normalizedCompanyName": "中国葛洲坝集团", "nature": "央企子公司", "locations": ["湖北武汉", "湖北宜昌", "全国"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "中国能建 2027 校招", "type": "国聘", "url": "https://ceec.iguopin.com/job" }, "sourceIds": ["src-ceec-2027-guopin", "src-cggc-2027-lzu"], "sourceLabels": ["中国能建国聘校招平台", "兰州大学就业网"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-cjwsjy", "name": "长江勘测规划设计研究有限责任公司", "normalizedCompanyName": "长江设计集团", "nature": "中央企业", "locations": ["湖北武汉", "全国"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "长江设计 2027 招聘", "type": "企业官网", "url": "http://www.cjwsjy.com.cn/p1/rczp.html" }, "sourceIds": ["src-cjwsjy-2027-official"], "sourceLabels": ["长江设计集团人才招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-jztey", "name": "九州通医药集团股份有限公司", "normalizedCompanyName": "九州通医药集团", "nature": "民营企业", "locations": ["湖北武汉", "全国"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "九州通 2027 管培生校招", "type": "企业官网", "url": "https://job.hust.edu.cn/sxjob/2438359.htm" }, "sourceIds": ["src-jztey-2027-hust", "src-jztey-2027-cumtb"], "sourceLabels": ["华中科技大学就业网", "中国矿业大学（北京）就业网"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-zall", "name": "卓尔智联集团有限公司", "normalizedCompanyName": "卓尔智联集团", "nature": "民营企业", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "卓尔集团官网", "type": "企业官网", "url": "https://www.zallcn.com/" }, "sourceIds": ["src-91wllm"], "sourceLabels": ["湖北24365大学生就业服务平台"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-guide", "name": "武汉高德红外股份有限公司", "normalizedCompanyName": "高德红外", "nature": "民营企业", "locations": ["湖北武汉"], "status": "开放中", "confidence": "已核验", "regionScope": "湖北省内", "channel": { "label": "高德红外 2027 校招", "type": "企业官网", "url": "https://gdhw.zhiye.com/" }, "sourceIds": ["src-guide-2027-ncepu", "src-guide-2027-hebut"], "sourceLabels": ["华北电力大学就业网", "河北工业大学就业网"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-accelink", "name": "武汉光迅科技股份有限公司", "normalizedCompanyName": "光迅科技", "nature": "国有控股上市公司", "locations": ["湖北武汉"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "光迅科技官网", "type": "企业官网", "url": "https://www.accelink.com/" }, "sourceIds": ["src-91wllm"], "sourceLabels": ["湖北24365大学生就业服务平台"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-zf", "name": "采埃孚中国", "normalizedCompanyName": "采埃孚中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "采埃孚招聘", "type": "企业官网", "url": "https://jobs.zf.com/" }, "sourceIds": ["src-zf-career"], "sourceLabels": ["采埃孚招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-aptiv", "name": "安波福中国", "normalizedCompanyName": "安波福中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "安波福招聘", "type": "企业官网", "url": "https://www.aptiv.com/careers" }, "sourceIds": ["src-aptiv-career"], "sourceLabels": ["安波福招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-visteon", "name": "伟世通中国", "normalizedCompanyName": "伟世通中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "伟世通招聘", "type": "企业官网", "url": "https://www.visteon.com/careers/" }, "sourceIds": ["src-visteon-career"], "sourceLabels": ["伟世通招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-adient", "name": "安道拓中国", "normalizedCompanyName": "安道拓中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "安道拓招聘", "type": "企业官网", "url": "https://www.adient.com/careers/" }, "sourceIds": ["src-adient-career"], "sourceLabels": ["安道拓招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-schneider", "name": "施耐德电气中国", "normalizedCompanyName": "施耐德电气中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "施耐德电气招聘", "type": "企业官网", "url": "https://www.se.com/cn/zh/about-us/careers/overview.jsp" }, "sourceIds": ["src-schneider-career"], "sourceLabels": ["施耐德电气招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-abb", "name": "ABB中国", "normalizedCompanyName": "ABB中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "ABB招聘", "type": "企业官网", "url": "https://careers.abb/global/en" }, "sourceIds": ["src-abb-career"], "sourceLabels": ["ABB招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-michelin", "name": "米其林中国", "normalizedCompanyName": "米其林中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "米其林招聘", "type": "企业官网", "url": "https://jobs.michelinman.com/" }, "sourceIds": ["src-michelin-career"], "sourceLabels": ["米其林招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-magna", "name": "麦格纳中国", "normalizedCompanyName": "麦格纳中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "麦格纳招聘", "type": "企业官网", "url": "https://jobs.magna.com/" }, "sourceIds": ["src-magna-career"], "sourceLabels": ["麦格纳招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-mahle", "name": "马勒中国", "normalizedCompanyName": "马勒中国", "nature": "外企", "locations": ["湖北黄冈", "湖北全省", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "马勒招聘", "type": "企业官网", "url": "https://jobs.mahle.com/" }, "sourceIds": ["src-mahle-career"], "sourceLabels": ["马勒招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-dhl", "name": "DHL中国", "normalizedCompanyName": "DHL中国", "nature": "外企", "locations": ["湖北武汉", "全国"], "status": "待确认", "confidence": "待确认", "regionScope": "湖北省内", "channel": { "label": "DHL招聘", "type": "企业官网", "url": "https://careers.dhl.com/global/en" }, "sourceIds": ["src-dhl-career"], "sourceLabels": ["DHL招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-siemens", "name": "西门子中国", "normalizedCompanyName": "西门子中国", "nature": "外企", "locations": ["全国"], "status": "开放中", "confidence": "已核验", "regionScope": "全国可投", "channel": { "label": "西门子 2027 校招", "type": "企业官网", "url": "https://www.siemens.com/zh-cn/company/jobs/campus-recruiting/" }, "sourceIds": ["src-siemens-career"], "sourceLabels": ["西门子中国校园招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-pwc", "name": "普华永道中国", "normalizedCompanyName": "普华永道中国", "nature": "外企", "locations": ["全国"], "status": "开放中", "confidence": "已核验", "regionScope": "全国可投", "channel": { "label": "普华永道 2027 校招", "type": "企业官网", "url": "https://www.pwccn.com/zh/careers/students.html" }, "sourceIds": ["src-pwc-career"], "sourceLabels": ["普华永道中国校园招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-unilever", "name": "联合利华中国", "normalizedCompanyName": "联合利华中国", "nature": "外企", "locations": ["全国"], "status": "待确认", "confidence": "待确认", "regionScope": "全国可投", "channel": { "label": "联合利华招聘", "type": "企业官网", "url": "https://careers.unilever.com/china" }, "sourceIds": ["src-unilever-career"], "sourceLabels": ["联合利华中国招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-deloitte", "name": "德勤中国", "normalizedCompanyName": "德勤中国", "nature": "外企", "locations": ["全国"], "status": "开放中", "confidence": "已核验", "regionScope": "全国可投", "channel": { "label": "德勤中国 2027 校招", "type": "企业官网", "url": "https://www.deloitte.com/cn/zh/careers/explore-your-fit/students/graduate-program.html" }, "sourceIds": ["src-deloitte-career"], "sourceLabels": ["德勤中国校园招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-ey", "name": "安永中国", "normalizedCompanyName": "安永中国", "nature": "外企", "locations": ["全国"], "status": "待确认", "confidence": "待确认", "regionScope": "全国可投", "channel": { "label": "安永学生招聘", "type": "企业官网", "url": "https://www.ey.com/zh_cn/careers/students" }, "sourceIds": ["src-ey-career"], "sourceLabels": ["安永中国学生招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true },
-    { "id": "dir-kpmg", "name": "毕马威中国", "normalizedCompanyName": "毕马威中国", "nature": "外企", "locations": ["全国"], "status": "待确认", "confidence": "待确认", "regionScope": "全国可投", "channel": { "label": "毕马威招聘", "type": "企业官网", "url": "https://kpmg.com/cn/zh/home/careers.html" }, "sourceIds": ["src-kpmg-career"], "sourceLabels": ["毕马威中国招聘"], "firstSeenAt": "2026-09-22", "lastVerifiedAt": "2026-09-22", "isFirstExpansion": true }
+    {
+      "id": "dir-dfmc",
+      "name": "东风汽车集团有限公司",
+      "normalizedCompanyName": "东风汽车集团",
+      "nature": "中央企业",
+      "locations": [
+        "湖北武汉",
+        "湖北全省",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "东风校园招聘",
+        "type": "企业官网",
+        "url": "https://www.dfmc.com.cn/zhaopin/xiaoyuanzhaopin.html"
+      },
+      "sourceIds": [
+        "src-dfmc-career"
+      ],
+      "sourceLabels": [
+        "东风汽车校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cmcc-hb",
+      "name": "中国移动通信集团湖北有限公司",
+      "normalizedCompanyName": "中国移动通信集团湖北",
+      "nature": "央企子公司",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国移动招聘",
+        "type": "集团招聘平台",
+        "url": "https://job.10086.cn/"
+      },
+      "sourceIds": [
+        "src-cmcc-career"
+      ],
+      "sourceLabels": [
+        "中国移动招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cummins",
+      "name": "康明斯中国",
+      "normalizedCompanyName": "康明斯中国",
+      "nature": "外企",
+      "locations": [
+        "湖北武汉",
+        "湖北襄阳",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "康明斯 2027 武汉岗位",
+        "type": "企业官网",
+        "url": "https://fa-espx-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/zh-CN/sites/CX_1/job/2437110/"
+      },
+      "sourceIds": [
+        "src-cummins-2027-official",
+        "src-cummins-2027-91wllm"
+      ],
+      "sourceLabels": [
+        "康明斯官方 2027 武汉岗位",
+        "武汉工商学院就业网"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-whfhg",
+      "name": "武汉金融控股（集团）有限公司",
+      "normalizedCompanyName": "武汉金融控股集团",
+      "nature": "武汉市属国企",
+      "locations": [
+        "湖北武汉"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "武汉金控 2027 校招公告",
+        "type": "企业官网",
+        "url": "https://job.lzu.edu.cn/html/74/article/2026/92317.html"
+      },
+      "sourceIds": [
+        "src-whfhg-2027-lzu",
+        "src-whfhg-2027-gemu"
+      ],
+      "sourceLabels": [
+        "兰州大学就业网",
+        "武汉格木教育招聘公告"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cscec3",
+      "name": "中建三局集团有限公司",
+      "normalizedCompanyName": "中建三局集团",
+      "nature": "央企子公司",
+      "locations": [
+        "湖北武汉",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国建筑校园招聘",
+        "type": "集团招聘平台",
+        "url": "https://recruit.cscec.com/recruit"
+      },
+      "sourceIds": [
+        "src-cscec-recruit",
+        "src-cscec3-2027-hebut"
+      ],
+      "sourceLabels": [
+        "中国建筑校园招聘",
+        "河北工业大学就业网"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cr11g",
+      "name": "中铁十一局集团有限公司",
+      "normalizedCompanyName": "中铁十一局集团",
+      "nature": "央企子公司",
+      "locations": [
+        "湖北武汉",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中铁十一局 2027 校招简章",
+        "type": "企业官网",
+        "url": "https://job.lzu.edu.cn/html/22/article/2026/91731.html"
+      },
+      "sourceIds": [
+        "src-cr11-2027-lzu",
+        "src-cr11-2027-jlu"
+      ],
+      "sourceLabels": [
+        "兰州大学就业网",
+        "吉林大学就业网"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-mcc1",
+      "name": "中国一冶集团有限公司",
+      "normalizedCompanyName": "中国一冶集团",
+      "nature": "央企子公司",
+      "locations": [
+        "湖北武汉",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国一冶 2027 秋招",
+        "type": "企业官网",
+        "url": "https://www.cfmcc.com/rlzy/zpxx/"
+      },
+      "sourceIds": [
+        "src-cfmcc-2027-official"
+      ],
+      "sourceLabels": [
+        "中国一冶招聘信息"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cggc",
+      "name": "中国葛洲坝集团有限公司",
+      "normalizedCompanyName": "中国葛洲坝集团",
+      "nature": "央企子公司",
+      "locations": [
+        "湖北武汉",
+        "湖北宜昌",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国能建 2027 校招",
+        "type": "国聘",
+        "url": "https://ceec.iguopin.com/job"
+      },
+      "sourceIds": [
+        "src-ceec-2027-guopin",
+        "src-cggc-2027-lzu"
+      ],
+      "sourceLabels": [
+        "中国能建国聘校招平台",
+        "兰州大学就业网"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cjwsjy",
+      "name": "长江勘测规划设计研究有限责任公司",
+      "normalizedCompanyName": "长江设计集团",
+      "nature": "中央企业",
+      "locations": [
+        "湖北武汉",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "长江设计 2027 招聘",
+        "type": "企业官网",
+        "url": "http://www.cjwsjy.com.cn/p1/rczp.html"
+      },
+      "sourceIds": [
+        "src-cjwsjy-2027-official"
+      ],
+      "sourceLabels": [
+        "长江设计集团人才招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-jztey",
+      "name": "九州通医药集团股份有限公司",
+      "normalizedCompanyName": "九州通医药集团",
+      "nature": "民营企业",
+      "locations": [
+        "湖北武汉",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "九州通 2027 管培生校招",
+        "type": "企业官网",
+        "url": "https://job.hust.edu.cn/sxjob/2438359.htm"
+      },
+      "sourceIds": [
+        "src-jztey-2027-hust",
+        "src-jztey-2027-cumtb"
+      ],
+      "sourceLabels": [
+        "华中科技大学就业网",
+        "中国矿业大学（北京）就业网"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-guide",
+      "name": "武汉高德红外股份有限公司",
+      "normalizedCompanyName": "高德红外",
+      "nature": "民营企业",
+      "locations": [
+        "湖北武汉"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "高德红外 2027 校招",
+        "type": "企业官网",
+        "url": "https://gdhw.zhiye.com/"
+      },
+      "sourceIds": [
+        "src-guide-2027-ncepu",
+        "src-guide-2027-hebut"
+      ],
+      "sourceLabels": [
+        "华北电力大学就业网",
+        "河北工业大学就业网"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-siemens",
+      "name": "西门子中国",
+      "normalizedCompanyName": "西门子中国",
+      "nature": "外企",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "西门子 2027 校招",
+        "type": "企业官网",
+        "url": "https://www.siemens.com/zh-cn/company/jobs/campus-recruiting/"
+      },
+      "sourceIds": [
+        "src-siemens-career"
+      ],
+      "sourceLabels": [
+        "西门子中国校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-pwc",
+      "name": "普华永道中国",
+      "normalizedCompanyName": "普华永道中国",
+      "nature": "外企",
+      "locations": [
+        "湖北武汉",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "普华永道 2027 校招",
+        "type": "企业官网",
+        "url": "https://www.pwccn.com/zh/careers/students.html"
+      },
+      "sourceIds": [
+        "src-pwc-career",
+        "src-pwc-2027-wuhan-lzu"
+      ],
+      "sourceLabels": [
+        "普华永道中国2027校园招聘",
+        "兰州大学就业网武汉岗位信息"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-deloitte",
+      "name": "德勤中国",
+      "normalizedCompanyName": "德勤中国",
+      "nature": "外企",
+      "locations": [
+        "湖北武汉",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "德勤中国 2027 校招",
+        "type": "企业官网",
+        "url": "https://www.deloitte.com/cn/zh/careers/explore-your-fit/students/graduate-program.html"
+      },
+      "sourceIds": [
+        "src-deloitte-career",
+        "src-deloitte-2027-wuhan"
+      ],
+      "sourceLabels": [
+        "德勤中国2027校园招聘",
+        "德勤2027武汉职位信息"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-boc",
+      "name": "中国银行股份有限公司",
+      "normalizedCompanyName": "中国银行",
+      "nature": "中央企业",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国银行2027校园招聘",
+        "type": "企业官网",
+        "url": "https://www.boc.cn/aboutboc/bi4/202609/t20260903_25689311.html"
+      },
+      "sourceIds": [
+        "src-boc-2027-official"
+      ],
+      "sourceLabels": [
+        "中国银行官方2027校园招聘公告"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-icbc-hb",
+      "name": "中国工商银行股份有限公司湖北省分行",
+      "normalizedCompanyName": "工商银行湖北省分行",
+      "nature": "央企分支机构",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "工商银行校园招聘",
+        "type": "企业官网",
+        "url": "https://job.icbc.com.cn/pc/index.html"
+      },
+      "sourceIds": [
+        "src-icbc-hb-2027-official"
+      ],
+      "sourceLabels": [
+        "工商银行官方校园招聘平台（湖北省分行）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-ccb-hb",
+      "name": "中国建设银行股份有限公司湖北省分行",
+      "normalizedCompanyName": "建设银行湖北省分行",
+      "nature": "央企分支机构",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "建设银行湖北省分行校招",
+        "type": "企业官网",
+        "url": "https://job2.ccb.com/chn/job/org_index.html?planType=XY&orgId=2005978"
+      },
+      "sourceIds": [
+        "src-ccb-hb-2027-official"
+      ],
+      "sourceLabels": [
+        "建设银行官方湖北省分行校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-abc-hb",
+      "name": "中国农业银行股份有限公司湖北省分行",
+      "normalizedCompanyName": "农业银行湖北省分行",
+      "nature": "央企分支机构",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "农业银行校园招聘",
+        "type": "企业官网",
+        "url": "https://career.abchina.com.cn/buildMobile/index.html"
+      },
+      "sourceIds": [
+        "src-abc-hb-2027-official"
+      ],
+      "sourceLabels": [
+        "农业银行官方校园招聘平台（湖北省分行）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-bocom-hb",
+      "name": "交通银行股份有限公司湖北省分行",
+      "normalizedCompanyName": "交通银行湖北省分行",
+      "nature": "央企分支机构",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "交通银行校园招聘",
+        "type": "企业官网",
+        "url": "https://job.bankcomm.com/"
+      },
+      "sourceIds": [
+        "src-bocom-hb-2027-official"
+      ],
+      "sourceLabels": [
+        "交通银行官方校园招聘平台（湖北省分行）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-psbc-hb",
+      "name": "中国邮政储蓄银行股份有限公司湖北省分行",
+      "normalizedCompanyName": "邮储银行湖北省分行",
+      "nature": "央企分支机构",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "邮储银行校园招聘",
+        "type": "企业官网",
+        "url": "https://www.psbc.com/cn/gyyc/rczp/"
+      },
+      "sourceIds": [
+        "src-psbc-hb-2027-official"
+      ],
+      "sourceLabels": [
+        "邮储银行官方2027校园招聘（湖北省分行）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cmb-wh",
+      "name": "招商银行股份有限公司武汉分行",
+      "normalizedCompanyName": "招商银行武汉分行",
+      "nature": "股份制银行",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "招商银行校园招聘",
+        "type": "企业官网",
+        "url": "https://career.cmbchina.com/"
+      },
+      "sourceIds": [
+        "src-cmb-wh-2027-official"
+      ],
+      "sourceLabels": [
+        "招商银行官方校园招聘平台（武汉分行）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-spdb-wh",
+      "name": "上海浦东发展银行股份有限公司武汉分行",
+      "normalizedCompanyName": "浦发银行武汉分行",
+      "nature": "股份制银行",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "浦发银行校园招聘",
+        "type": "企业官网",
+        "url": "https://job.spdb.com.cn/campusJob"
+      },
+      "sourceIds": [
+        "src-spdb-wh-2027-official"
+      ],
+      "sourceLabels": [
+        "浦发银行官方校园招聘平台（武汉分行）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-ct-hb",
+      "name": "中国电信股份有限公司湖北分公司",
+      "normalizedCompanyName": "中国电信湖北公司",
+      "nature": "央企分支机构",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国电信校园招聘",
+        "type": "企业官网",
+        "url": "https://job.chinatelecom.com.cn/"
+      },
+      "sourceIds": [
+        "src-ct-hb-2027-official"
+      ],
+      "sourceLabels": [
+        "中国电信官方2027校园招聘（湖北公司）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cu-hb",
+      "name": "中国联合网络通信有限公司湖北省分公司",
+      "normalizedCompanyName": "中国联通湖北省分公司",
+      "nature": "央企分支机构",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国联通校园招聘",
+        "type": "企业官网",
+        "url": "https://zglt.iguopin.com/job"
+      },
+      "sourceIds": [
+        "src-cu-hb-2027-official"
+      ],
+      "sourceLabels": [
+        "中国联通官方校园招聘平台（湖北分公司）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-post-hb",
+      "name": "中国邮政集团有限公司湖北省分公司",
+      "normalizedCompanyName": "中国邮政湖北省分公司",
+      "nature": "央企分支机构",
+      "locations": [
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国邮政2027校园招聘",
+        "type": "企业官网",
+        "url": "https://www.chinapost.com.cn/cn/report/2609/1176-1.htm"
+      },
+      "sourceIds": [
+        "src-post-hb-2027-official"
+      ],
+      "sourceLabels": [
+        "中国邮政官方2027联合校园招聘公告（湖北单位）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-ymtc",
+      "name": "长江存储科技有限责任公司",
+      "normalizedCompanyName": "长江存储",
+      "nature": "国有控股企业",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "长江存储2027校园招聘",
+        "type": "企业官网",
+        "url": "https://ymtc-campus.zhiye.com/"
+      },
+      "sourceIds": [
+        "src-ymtc-2027-official"
+      ],
+      "sourceLabels": [
+        "长江存储官方2027校园招聘平台"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-xiaomi-wh",
+      "name": "小米科技（武汉）有限公司",
+      "normalizedCompanyName": "小米武汉",
+      "nature": "民营企业",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "小米校园招聘",
+        "type": "企业官网",
+        "url": "https://hr.xiaomi.com/website/campus.html"
+      },
+      "sourceIds": [
+        "src-xiaomi-wh-2027-official"
+      ],
+      "sourceLabels": [
+        "小米官方2027校园招聘武汉岗位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-lenovo-wh",
+      "name": "联想（武汉）有限公司",
+      "normalizedCompanyName": "联想武汉",
+      "nature": "民营企业",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "联想校园招聘",
+        "type": "企业官网",
+        "url": "https://talent.lenovo.com.cn/campus"
+      },
+      "sourceIds": [
+        "src-lenovo-wh-2027-official"
+      ],
+      "sourceLabels": [
+        "联想官方2027校园招聘武汉岗位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-boe-wh",
+      "name": "武汉京东方光电科技有限公司",
+      "normalizedCompanyName": "京东方武汉",
+      "nature": "民营企业",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "京东方校园招聘",
+        "type": "企业官网",
+        "url": "https://campus.boe.com/"
+      },
+      "sourceIds": [
+        "src-boe-wh-2027-official"
+      ],
+      "sourceLabels": [
+        "京东方官方2027校园招聘武汉岗位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-wuxi-wh",
+      "name": "武汉药明康德新药开发有限公司",
+      "normalizedCompanyName": "武汉药明康德",
+      "nature": "民营企业",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "药明康德校园招聘",
+        "type": "企业官网",
+        "url": "https://wuxiapptec.zhiye.com/"
+      },
+      "sourceIds": [
+        "src-wuxi-wh-2027-official"
+      ],
+      "sourceLabels": [
+        "药明康德官方2027校园招聘武汉岗位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-yanfeng-wh",
+      "name": "延锋汽车饰件系统武汉有限公司",
+      "normalizedCompanyName": "延锋武汉",
+      "nature": "外企",
+      "locations": [
+        "湖北武汉",
+        "湖北全省",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "延锋校园招聘",
+        "type": "企业官网",
+        "url": "https://www.yanfeng.com/cn/zhongguoxiaoyuanzhaopin"
+      },
+      "sourceIds": [
+        "src-yanfeng-wh-2027-official"
+      ],
+      "sourceLabels": [
+        "延锋官方2027校园招聘武汉岗位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-huawei-wh",
+      "name": "华为技术有限公司",
+      "normalizedCompanyName": "华为",
+      "nature": "民营企业",
+      "locations": [
+        "湖北武汉",
+        "湖北全省"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "华为校园招聘",
+        "type": "企业官网",
+        "url": "https://career.huawei.com/cn/campus-recruitment"
+      },
+      "sourceIds": [
+        "src-huawei-wh-2027-official"
+      ],
+      "sourceLabels": [
+        "华为官方2027校园招聘武汉岗位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-crrc-yangtze",
+      "name": "中车长江运输设备集团有限公司",
+      "normalizedCompanyName": "中车长江集团",
+      "nature": "央企子公司",
+      "locations": [
+        "湖北武汉",
+        "湖北全省",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "中国中车校园招聘",
+        "type": "集团招聘平台",
+        "url": "https://crrcgc.zhiye.com/"
+      },
+      "sourceIds": [
+        "src-crrc-yangtze-2027-official"
+      ],
+      "sourceLabels": [
+        "中国中车官方2027校园招聘（中车长江）"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-ey",
+      "name": "安永中国",
+      "normalizedCompanyName": "安永中国",
+      "nature": "外企",
+      "locations": [
+        "湖北武汉",
+        "湖北全省",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "安永学生项目",
+        "type": "企业官网",
+        "url": "https://www.ey.com/zh_cn/careers/student-programs-in-chinese-mainland"
+      },
+      "sourceIds": [
+        "src-ey-2027-official"
+      ],
+      "sourceLabels": [
+        "安永官方2027校园招聘武汉职位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-nestle",
+      "name": "雀巢中国",
+      "normalizedCompanyName": "雀巢中国",
+      "nature": "外企",
+      "locations": [
+        "湖北武汉",
+        "湖北全省",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "雀巢学生招聘",
+        "type": "企业官网",
+        "url": "https://www.nestle.com.cn/jobs/students-graduates"
+      },
+      "sourceIds": [
+        "src-nestle-2027-official"
+      ],
+      "sourceLabels": [
+        "雀巢官方学生招聘及2027武汉职位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-danone",
+      "name": "达能中国",
+      "normalizedCompanyName": "达能中国",
+      "nature": "外企",
+      "locations": [
+        "湖北武汉",
+        "湖北全省",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "达能校园招聘",
+        "type": "企业官网",
+        "url": "https://careersite.danone.com.cn/zh_CN/careers/Campus/index.html"
+      },
+      "sourceIds": [
+        "src-danone-2027-official"
+      ],
+      "sourceLabels": [
+        "达能官方2027校园招聘武汉职位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-accenture",
+      "name": "埃森哲中国",
+      "normalizedCompanyName": "埃森哲中国",
+      "nature": "外企",
+      "locations": [
+        "湖北武汉",
+        "湖北全省",
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "湖北省内",
+      "channel": {
+        "label": "埃森哲2027校园招聘",
+        "type": "企业官网",
+        "url": "https://www.accenture.cn/cn-zh/careers/local/accenture-china-campus-page"
+      },
+      "sourceIds": [
+        "src-accenture-2027-official"
+      ],
+      "sourceLabels": [
+        "埃森哲官方2027校园招聘武汉职位"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-tencent",
+      "name": "腾讯科技（深圳）有限公司",
+      "normalizedCompanyName": "腾讯",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "腾讯校园招聘",
+        "type": "企业官网",
+        "url": "https://join.qq.com/post.html?query=1"
+      },
+      "sourceIds": [
+        "src-tencent-2027-official"
+      ],
+      "sourceLabels": [
+        "腾讯官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-alibaba",
+      "name": "阿里巴巴（中国）有限公司",
+      "normalizedCompanyName": "阿里巴巴",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "阿里巴巴校园招聘",
+        "type": "企业官网",
+        "url": "https://talent.alibaba.com/campus/home"
+      },
+      "sourceIds": [
+        "src-alibaba-2027-official"
+      ],
+      "sourceLabels": [
+        "阿里巴巴官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-bytedance",
+      "name": "北京字节跳动科技有限公司",
+      "normalizedCompanyName": "字节跳动",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "字节跳动校园招聘",
+        "type": "企业官网",
+        "url": "https://jobs.bytedance.com/campus/"
+      },
+      "sourceIds": [
+        "src-bytedance-2027-official"
+      ],
+      "sourceLabels": [
+        "字节跳动官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-jd",
+      "name": "北京京东世纪贸易有限公司",
+      "normalizedCompanyName": "京东",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "京东校园招聘",
+        "type": "企业官网",
+        "url": "https://campus.jd.com/"
+      },
+      "sourceIds": [
+        "src-jd-2027-official"
+      ],
+      "sourceLabels": [
+        "京东官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-meituan",
+      "name": "北京三快在线科技有限公司",
+      "normalizedCompanyName": "美团",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "美团校园招聘",
+        "type": "企业官网",
+        "url": "https://zhaopin.meituan.com/web/campus"
+      },
+      "sourceIds": [
+        "src-meituan-2027-official"
+      ],
+      "sourceLabels": [
+        "美团官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-baidu",
+      "name": "北京百度网讯科技有限公司",
+      "normalizedCompanyName": "百度",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "百度校园招聘",
+        "type": "企业官网",
+        "url": "https://talent.baidu.com/jobs/list"
+      },
+      "sourceIds": [
+        "src-baidu-2027-official"
+      ],
+      "sourceLabels": [
+        "百度官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-netease",
+      "name": "网易（杭州）网络有限公司",
+      "normalizedCompanyName": "网易",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "网易校园招聘",
+        "type": "企业官网",
+        "url": "https://campus.163.com/"
+      },
+      "sourceIds": [
+        "src-netease-2027-official"
+      ],
+      "sourceLabels": [
+        "网易官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-pdd",
+      "name": "上海寻梦信息技术有限公司",
+      "normalizedCompanyName": "拼多多",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "拼多多校园招聘",
+        "type": "企业官网",
+        "url": "https://careers.pinduoduo.com/campus/"
+      },
+      "sourceIds": [
+        "src-pdd-2027-official"
+      ],
+      "sourceLabels": [
+        "拼多多官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-catl",
+      "name": "宁德时代新能源科技股份有限公司",
+      "normalizedCompanyName": "宁德时代",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "宁德时代校园招聘",
+        "type": "企业官网",
+        "url": "https://career.catl.com/"
+      },
+      "sourceIds": [
+        "src-catl-2027-official"
+      ],
+      "sourceLabels": [
+        "宁德时代官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-midea",
+      "name": "美的集团股份有限公司",
+      "normalizedCompanyName": "美的集团",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "美的校园招聘",
+        "type": "企业官网",
+        "url": "https://careers.midea.com/schoolOut"
+      },
+      "sourceIds": [
+        "src-midea-2027-official"
+      ],
+      "sourceLabels": [
+        "美的官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-cmcc-group",
+      "name": "中国移动通信集团有限公司",
+      "normalizedCompanyName": "中国移动集团",
+      "nature": "中央企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "中国移动2027校园招聘",
+        "type": "集团招聘平台",
+        "url": "https://job.10086.cn/"
+      },
+      "sourceIds": [
+        "src-cmcc-group-2027-official"
+      ],
+      "sourceLabels": [
+        "中国移动官方2027全国校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-oppo",
+      "name": "OPPO广东移动通信有限公司",
+      "normalizedCompanyName": "OPPO",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "OPPO校园招聘",
+        "type": "企业官网",
+        "url": "https://careers.oppo.com/campus"
+      },
+      "sourceIds": [
+        "src-oppo-2027-official"
+      ],
+      "sourceLabels": [
+        "OPPO官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-vivo",
+      "name": "维沃移动通信有限公司",
+      "normalizedCompanyName": "vivo",
+      "nature": "民营企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "vivo校园招聘",
+        "type": "企业官网",
+        "url": "https://hr.vivo.com/wt/vivo/web/index/CompvivoPageindex"
+      },
+      "sourceIds": [
+        "src-vivo-2027-official"
+      ],
+      "sourceLabels": [
+        "vivo官方2027校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    },
+    {
+      "id": "dir-ct-group",
+      "name": "中国电信集团有限公司",
+      "normalizedCompanyName": "中国电信集团",
+      "nature": "中央企业",
+      "locations": [
+        "全国"
+      ],
+      "status": "开放中",
+      "confidence": "已核验",
+      "regionScope": "全国可投",
+      "channel": {
+        "label": "中国电信2027校园招聘",
+        "type": "集团招聘平台",
+        "url": "https://job.chinatelecom.com.cn/"
+      },
+      "sourceIds": [
+        "src-ct-group-2027-official"
+      ],
+      "sourceLabels": [
+        "中国电信官方2027全国校园招聘"
+      ],
+      "firstSeenAt": "2026-09-22",
+      "lastVerifiedAt": "2026-09-22",
+      "isFirstExpansion": true
+    }
   ]
 }

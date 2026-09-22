@@ -33,10 +33,30 @@ export const recruitmentRecords: RecruitmentRecord[] = [
   { id: 'rec-cmcc-hb-2027', companyId: 'cmcc-hb', cohort: 2027, status: '开放中', locations: ['湖北全省'], sourceIds: ['src-cmcc-career'], firstSeenAt: checked, lastVerifiedAt: checked, confidence: '已核验', regionScope: '湖北省内' },
 ];
 
-export const ownershipEvidence: OwnershipEvidence[] = [];
-export const ownershipTrees: OwnershipNode[] = [];
-export const ownershipCoverageSets: OwnershipCoverageSet[] = [];
-export const ownershipEdges: OwnershipEdge[] = [];
+export const ownershipEvidence: OwnershipEvidence[] = [
+  { id: 'ev-sasac-central-enterprise-list-2026', title: '国务院国资委央企名录（东风汽车集团有限公司）', publisher: '国务院国资委', url: 'http://wap.sasac.gov.cn/n2588045/n27271785/n27271792/c14159097/content.html', sourceType: '监管披露', verifiedAt: checked },
+  { id: 'ev-dfmc-2027-campus-procurement', title: '2027届东风汽车校园招聘及雇主品牌建设项目', publisher: '东风汽车集团股份有限公司人事共享服务中心', url: 'https://etp.dfmc.com.cn/jyxx/004002/004002003/20260909/669b81d4-ce35-451f-8bc7-96e7b810bd66.html', sourceType: '采购公告', verifiedAt: checked },
+  { id: 'ev-dfmc-2027-campus-lzu', title: '东风汽车集团有限公司研发总院2027届秋季校园招聘简章', publisher: '兰州大学就业网', url: 'https://job.lzu.edu.cn/html/22/article/2026/91112.html', sourceType: '招聘公告', verifiedAt: checked },
+];
+const dfmcNode: OwnershipNode = {
+  id: 'dfmc', name: '东风汽车集团有限公司', category: '中央企业', level: 1, entityKind: '集团',
+  locationTags: ['湖北武汉', '湖北全省', '全国'], controlType: '履行出资人职责', registeredLocation: '湖北省武汉市',
+  verifiedAt: checked, verificationStatus: '已核验', coverageSetId: 'coverage-sasac-dfmc',
+  relation: '国务院国资委央企名录列示的中央企业', sourceUrl: 'https://www.dfmc.com.cn/',
+  recruitmentChannels: [{ label: '东风汽车2027届校园招聘', type: '公司招聘官网', match: '公司专属', status: '可投递', url: 'https://www.dfmc.com.cn/zhaopin/xiaoyuanzhaopin.html', appliesToCompanyName: '东风汽车集团有限公司', evidenceUrl: 'https://job.lzu.edu.cn/html/22/article/2026/91112.html', verifiedAt: checked }],
+};
+const sasacNode: OwnershipNode = {
+  id: 'sasac-central', name: '国务院国有资产监督管理委员会', category: '中央企业监管机构', level: 0, entityKind: '监管机构',
+  locationTags: ['全国'], controlType: '履行出资人职责', verifiedAt: checked, verificationStatus: '已核验',
+  sourceUrl: ownershipEvidence[0].url, recruitmentChannels: [], children: [dfmcNode],
+};
+export const ownershipTrees: OwnershipNode[] = [sasacNode];
+export const ownershipCoverageSets: OwnershipCoverageSet[] = [
+  { id: 'coverage-sasac-dfmc', parentId: 'sasac-central', label: '东风汽车单链核验集', scope: '本次仅核验国务院国资委至东风汽车集团的一条控制链，不代表央企名录完整覆盖', asOf: checked, targetLevel: 1, officialDisclosedTotal: null, expectedNodeIds: ['dfmc'], pendingNodeIds: [], completenessStatus: '官方未披露总数', sourceUrls: [ownershipEvidence[0].url] },
+];
+export const ownershipEdges: OwnershipEdge[] = [
+  { id: 'edge-sasac-dfmc', parentId: 'sasac-central', childId: 'dfmc', controlType: '履行出资人职责', controlBasis: '国务院国资委央企名录列示东风汽车集团有限公司', evidenceIds: ['ev-sasac-central-enterprise-list-2026'], asOf: checked, verificationStatus: '已核验' },
+];
 export const awards: AwardEntry[] = [
   { id: 'employer-hbjt-2025', companyId: 'hbjt', year: 2025, listName: '湖北重点雇主观察（非评奖）', awardTier: '省属重点企业', hubeiBasis: '湖北省国资委公开省属企业名录', sourceUrl: sources[0].url },
   { id: 'employer-hbui-2025', companyId: 'hbui', year: 2025, listName: '湖北重点雇主观察（非评奖）', awardTier: '省属重点企业', hubeiBasis: '湖北省国资委公开省属企业名录', sourceUrl: sources[0].url },

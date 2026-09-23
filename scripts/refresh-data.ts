@@ -3,8 +3,9 @@ import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { extractRecruitmentLeads, mergeCandidateLeads, normalizeCompanyName } from '../lib/collector.ts';
 import { inferRegionScope } from '../lib/region.ts';
+import { activeOwnershipData } from '../lib/ownership-lifecycle.ts';
 import { alertReason, createRecruitmentAlert, monitorFingerprint, recruitmentSignals } from '../lib/alerts.ts';
-import { awards, companies, ownershipTrees, recruitmentRecords, sources } from '../data/catalog.ts';
+import { awards, companies, hubeiHiringUnits, hubeiRecruitmentOpenings, ownershipTrees, recruitmentRecords, sources } from '../data/catalog.ts';
 import type { OwnershipNode, RecruitmentAlert, RecruitmentDirectoryEntry, RecruitmentLead, RecruitmentLeadStatus, RecruitmentMonitorEntry } from '../lib/types.ts';
 
 type RegistrySource = {
@@ -55,6 +56,7 @@ const registry = JSON.parse(await readFile(registryPath, 'utf8')) as Registry;
 const completedAt = new Date().toISOString();
 const shanghaiDate = (value: string) => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(value));
 const collectionDate = shanghaiDate(completedAt);
+const activeOwnership = activeOwnershipData(ownershipTrees, hubeiRecruitmentOpenings, hubeiHiringUnits, collectionDate);
 
 function hash(value: string): string {
   let result = 2166136261;
@@ -126,7 +128,7 @@ const sourceResults = await parallelMap(registry.sources, 6, async (source) => {
 });
 
 const flattenOwnershipNodes = (nodes: OwnershipNode[]): OwnershipNode[] => nodes.flatMap((node) => [node, ...flattenOwnershipNodes(node.children ?? [])]);
-const ownershipChannelBindings = flattenOwnershipNodes(ownershipTrees).flatMap((node) => node.recruitmentChannels
+const ownershipChannelBindings = flattenOwnershipNodes(activeOwnership.activeTrees).flatMap((node) => node.recruitmentChannels
   .filter((channel) => Boolean(channel.url))
   .map((channel) => ({ nodeId: node.id, companyName: node.name, channel })));
 const uniqueOwnershipChannelUrls = [...new Set(ownershipChannelBindings.map((item) => item.channel.url as string))];
@@ -404,7 +406,7 @@ const previousMonitorByKey = new Map(previousMonitorEntries.map((entry) => [entr
 const monitorEntries: RecruitmentMonitorEntry[] = [];
 let alertMonitorAnomalyCount = 0;
 
-for (const node of flattenOwnershipNodes(ownershipTrees)) {
+for (const node of flattenOwnershipNodes(activeOwnership.activeTrees)) {
   const channel = node.recruitmentChannels.find((item) => item.url && item.status !== '已截止' && (item.match === '公司专属' || item.match === '单位已定位'));
   if (!channel?.url) continue;
   const key = `ownership:${node.id}`;

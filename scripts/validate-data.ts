@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { awards, companies, hubeiHiringUnits, hubeiRecruitmentOpenings, hubeiRecruitmentSnapshot, ownershipCoverageSets, ownershipEdges, ownershipEvidence, ownershipTrees } from '../data/catalog.ts';
 import { isAllowedLocationLabel, regionConfig } from '../lib/region.ts';
+import { activeOwnershipData, shanghaiToday } from '../lib/ownership-lifecycle.ts';
 import type { RecruitmentDirectoryEntry } from '../lib/types.ts';
 
 const directory = JSON.parse(await readFile('data/recruitment-directory.json', 'utf8')) as { totalCount: number; verifiedCount: number; pendingCount: number; hubeiCount: number; hubeiShare: number; foreignCount: number; foreignOpenCount: number; foreignVerifiedCount: number; foreignHubeiCount: number; foreignHubeiShare: number; entries: RecruitmentDirectoryEntry[] };
@@ -52,7 +53,13 @@ for (const edge of ownershipEdges) {
 for (const set of ownershipCoverageSets) if (!nodeIds.has(set.parentId) || set.expectedNodeIds.some((id) => !nodeIds.has(id))) errors.push(`${set.id} 覆盖清单引用无效`);
 if (hubeiRecruitmentOpenings.length !== hubeiRecruitmentSnapshot.jobCount || hubeiHiringUnits.length !== hubeiRecruitmentSnapshot.hiringUnitCount) errors.push('湖北岗位快照统计不一致');
 for (const opening of hubeiRecruitmentOpenings) if (!unitIds.has(opening.hiringUnitId) || !/湖北|武汉|襄阳|宜昌|十堰|荆州|黄石/.test(opening.workLocation)) errors.push(`${opening.id} 用人单位或地域无效`);
-for (const opening of hubeiRecruitmentOpenings) if (opening.status !== '开放中') errors.push(`${opening.id} 未确认开放，不得进入正式岗位库`);
+for (const opening of hubeiRecruitmentOpenings) if (!['开放中', '已结束', '待确认'].includes(opening.status)) errors.push(`${opening.id} 招聘状态无效`);
+const activeOwnership = activeOwnershipData(ownershipTrees, hubeiRecruitmentOpenings, hubeiHiringUnits, shanghaiToday());
+for (const opening of activeOwnership.activeOpenings) {
+  const legalNode = nodes.find((node) => node.id === opening.legalEntityId);
+  if (!legalNode?.recruitmentChannels.some((channel) => channel.url === opening.officialUrl && channel.status === '可投递')) errors.push(`${opening.id} 缺少同一法人的有效投递渠道`);
+}
+if (activeOwnership.retired.some((item) => !item.reason)) errors.push('淘汰记录缺少原因');
 for (const award of awards) if (!award.hubeiBasis || !award.sourceUrl) errors.push(`${award.id} 缺少湖北关联依据`);
 for (const company of companies) if (company.locations.some((location) => /广西|南宁/.test(location))) errors.push(`${company.name} 含广西地点残留`);
 

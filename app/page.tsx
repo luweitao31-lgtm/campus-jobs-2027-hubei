@@ -6,8 +6,9 @@ import {
   ExternalLink, FileCheck2, MapPin, Network, RefreshCw, Search, ShieldCheck,
   Globe2, Sparkles, Trophy,
 } from 'lucide-react';
-import { awards, companies, hubeiHiringUnits, hubeiRecruitmentOpenings, hubeiRecruitmentSnapshot, ownershipCoverageSets, ownershipEdges, ownershipTrees, sources } from '@/data/catalog';
+import { awards, companies, hubeiHiringUnits, hubeiRecruitmentOpenings, ownershipCoverageSets, ownershipEdges, ownershipTrees, sources } from '@/data/catalog';
 import { regionConfig } from '@/lib/region';
+import { activeOwnershipData, descendantApplication, shanghaiToday } from '@/lib/ownership-lifecycle';
 import recruitmentDirectoryData from '@/data/recruitment-directory.json';
 import recruitmentLeadReport from '@/data/recruitment-sync.json';
 import recruitmentAlertData from '@/data/recruitment-alerts.json';
@@ -46,7 +47,7 @@ function saveReadAlertIds(ids: Set<string>) {
 const navigation = [
   { id: 'strategy' as const, index: '00', label: 'Offer 驾驶舱', description: '匹配、行动与投递闭环', stat: '每日精选 10 个', icon: Sparkles },
   { id: 'recruitment' as const, index: '01', label: '秋招情报组', description: '每日追踪 2027 届招聘入口', stat: `${recruitmentDirectory.totalCount} 家企业`, icon: BriefcaseBusiness },
-  { id: 'ownership' as const, index: '02', label: '央国企链组', description: '沿法律控制关系逐级核验', stat: `${flattenTree(ownershipTrees).length} 个主体`, icon: Network },
+  { id: 'ownership' as const, index: '02', label: '央国企链组', description: '只展示有有效投递入口的链', stat: '按当前有效岗位更新', icon: Network },
   { id: 'employers' as const, index: '03', label: '最佳雇主组', description: '湖北关联重点雇主', stat: `${awards.length} 条记录`, icon: Trophy },
   { id: 'foreign' as const, index: '专题', label: '外企专题', description: '秋招情报组专题视图', stat: `${foreignEntries.length} 家企业`, icon: Globe2 },
 ];
@@ -65,6 +66,13 @@ export default function Home() {
   const [sourceType, setSourceType] = useState('全部来源');
   const [page, setPage] = useState(1);
   const [readAlertIds, setReadAlertIds] = useState<Set<string>>(new Set());
+  const [ownershipToday, setOwnershipToday] = useState(shanghaiToday);
+  const ownershipView = useMemo(() => activeOwnershipData(ownershipTrees, hubeiRecruitmentOpenings, hubeiHiringUnits, ownershipToday), [ownershipToday]);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setOwnershipToday(shanghaiToday()), 60_000);
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     try {
@@ -152,7 +160,7 @@ export default function Home() {
         </div>
       </SidebarHeader>
       <SidebarContent className="brand-panel px-3 pb-2">
-        <SidebarNavigation activeModule={activeModule} setActiveModule={setActiveModule} />
+        <SidebarNavigation activeModule={activeModule} setActiveModule={setActiveModule} ownershipNodeCount={flattenTree(ownershipView.activeTrees).length} />
       </SidebarContent>
       <SidebarFooter className="brand-panel px-5 py-4"><div className="rounded-xl border border-white/10 bg-white/[0.045] p-3 text-xs leading-5 text-slate-400 shadow-inner shadow-black/10"><div className="mb-1 flex items-center gap-2 font-medium text-slate-200"><ShieldCheck className="size-4 text-cyan-300" /> 公开信息原则</div>只收录公开来源，不绕过登录与验证限制。</div></SidebarFooter>
     </Sidebar>
@@ -165,7 +173,7 @@ export default function Home() {
         <div key={activeModule} className="module-enter">
           {activeModule === 'strategy' && <CareerDashboard />}
           {activeModule === 'recruitment' && <RecruitmentPanel rows={pagedRecruitment} filteredCount={filteredRecruitment.length} page={safePage} pageCount={pageCount} setPage={setPage} query={query} setQuery={setQuery} location={location} setLocation={setLocation} status={status} setStatus={setStatus} nature={nature} setNature={setNature} sourceType={sourceType} setSourceType={setSourceType} />}
-          {activeModule === 'ownership' && <OwnershipPanel unreadFor={unreadFor} markEntityRead={markEntityRead} />}
+          {activeModule === 'ownership' && <OwnershipPanel unreadFor={unreadFor} markEntityRead={markEntityRead} view={ownershipView} today={ownershipToday} />}
           {activeModule === 'employers' && <EmployerPanel unreadFor={unreadFor} markEntityRead={markEntityRead} />}
           {activeModule === 'foreign' && <ForeignPanel />}
         </div>
@@ -174,7 +182,7 @@ export default function Home() {
   </SidebarProvider>;
 }
 
-function SidebarNavigation({ activeModule, setActiveModule }: { activeModule: ModuleId; setActiveModule: (module: ModuleId) => void }) {
+function SidebarNavigation({ activeModule, setActiveModule, ownershipNodeCount }: { activeModule: ModuleId; setActiveModule: (module: ModuleId) => void; ownershipNodeCount: number }) {
   const { setOpenMobile } = useSidebar();
   return <SidebarGroup className="h-full min-h-0 p-0"><SidebarGroupContent className="h-full"><SidebarMenu className="grid h-auto gap-2.5">
     {navigation.map((item) => <SidebarMenuItem key={item.id} className="min-h-0"><SidebarMenuButton
@@ -184,7 +192,7 @@ function SidebarNavigation({ activeModule, setActiveModule }: { activeModule: Mo
     >
       <div className="flex h-full w-full flex-col justify-between p-4">
         <div className="flex items-start justify-between gap-3"><span className="text-[0.65rem] font-bold tracking-[0.2em] text-cyan-200/70 transition-transform duration-300 group-hover/nav:translate-x-0.5 group-data-active/nav:text-slate-700">{item.index}</span><span className="nav-icon flex size-9 items-center justify-center rounded-xl bg-white/8 text-cyan-200 ring-1 ring-white/10 group-data-active/nav:bg-slate-950/10 group-data-active/nav:text-slate-950 group-data-active/nav:ring-slate-950/10"><item.icon className="size-[1.1rem]" /></span></div>
-        <div><strong className="block text-sm leading-5">{item.label}</strong><span className="mt-1 block text-[0.7rem] leading-4 text-slate-400 group-data-active/nav:text-slate-700">{item.description}</span><span className="nav-stat mt-2 inline-flex rounded-full bg-white/8 px-2 py-0.5 text-[0.65rem] font-medium text-cyan-100 group-data-active/nav:bg-slate-950/10 group-data-active/nav:text-slate-800">{item.stat}</span></div>
+        <div><strong className="block text-sm leading-5">{item.label}</strong><span className="mt-1 block text-[0.7rem] leading-4 text-slate-400 group-data-active/nav:text-slate-700">{item.description}</span><span className="nav-stat mt-2 inline-flex rounded-full bg-white/8 px-2 py-0.5 text-[0.65rem] font-medium text-cyan-100 group-data-active/nav:bg-slate-950/10 group-data-active/nav:text-slate-800">{item.id === 'ownership' ? `${ownershipNodeCount} 个有效链主体` : item.stat}</span></div>
       </div>
     </SidebarMenuButton></SidebarMenuItem>)}
   </SidebarMenu></SidebarGroupContent></SidebarGroup>;
@@ -294,39 +302,43 @@ type AlertUiProps = {
   markEntityRead: (module: RecruitmentAlert['module'], entityId: string) => void;
 };
 
-function OwnershipPanel({ unreadFor, markEntityRead }: AlertUiProps) {
+function OwnershipPanel({ unreadFor, markEntityRead, view, today }: AlertUiProps & { view: ReturnType<typeof activeOwnershipData>; today: string }) {
   const [query, setQuery] = useState('');
   const [locationFilter, setLocationFilter] = useState('湖北全部');
   const [verificationFilter, setVerificationFilter] = useState('全部状态');
-  const allNodes = useMemo(() => flattenTree(ownershipTrees), []);
+  const allNodes = useMemo(() => flattenTree(view.activeTrees), [view]);
   const verifiedLegalEntities = allNodes.filter((node) => node.level > 0 && node.verificationStatus === '已核验').length;
   const leafLegalEntities = allNodes.filter((node) => node.level > 0 && !node.children?.length).length;
   const pendingRelations = ownershipEdges.filter((edge) => edge.verificationStatus === '待确认').length;
-  const allOpenings = hubeiRecruitmentOpenings;
+  const allOpenings = view.activeOpenings;
   const openLegalEntityIds = new Set(allOpenings.filter((opening) => opening.status === '开放中' && opening.legalEntityId).map((opening) => opening.legalEntityId));
-  const nonLegalHiringUnits = hubeiHiringUnits.filter((unit) => unit.entityKind !== '法人').length;
-  const asOf = hubeiRecruitmentSnapshot.completedAt.slice(0, 10);
-  const filteredTrees = useMemo(() => ownershipTrees.map((root) => filterOwnershipTree(root, query, locationFilter, verificationFilter)).filter((root): root is OwnershipNode => Boolean(root)), [locationFilter, query, verificationFilter]);
-  return <section aria-labelledby="ownership-title"><PanelHeading id="ownership-title" icon={Network} eyebrow="法律控制（含间接）· 湖北法人口径" title="央国企资金跟踪链" description={`按已核验的控制关系展开，间接持股明确标注；招聘用人关系独立建模。首批定位 ${hubeiRecruitmentSnapshot.hiringUnitCount} 个湖北用人单位、${hubeiRecruitmentSnapshot.jobCount} 条岗位入口，未披露人数不作推算。`} />
+  const nonLegalHiringUnits = view.activeUnits.filter((unit) => unit.entityKind !== '法人').length;
+  const activeNodeIds = new Set(allNodes.map((node) => node.id));
+  const visibleCoverageSets = ownershipCoverageSets.filter((set) => activeNodeIds.has(set.parentId));
+  const filteredTrees = useMemo(() => view.activeTrees.map((root) => filterOwnershipTree(root, query, locationFilter, verificationFilter)).filter((root): root is OwnershipNode => Boolean(root)), [locationFilter, query, verificationFilter, view]);
+  return <section aria-labelledby="ownership-title"><PanelHeading id="ownership-title" icon={Network} eyebrow="有效投递链 · 湖北法人口径" title="央国企资金跟踪链" description={`只展示仍有2027届湖北投递入口的控制链：${view.activeUnits.length} 个湖北用人单位、${view.activeOpenings.length} 条有效岗位。已过截止日自动退出；截止日未披露者7天未复核也退出，来源暂时异常不等于招聘关闭。`} />
     <Card className="filter-panel mb-4 border-0 bg-white/90 shadow-sm ring-1 ring-slate-200/80"><CardContent className="grid gap-3 py-1 lg:grid-cols-[minmax(260px,1fr)_180px_160px]"><div className="relative"><Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-slate-400" /><Input aria-label="搜索资金链企业" className="h-10 bg-white pl-9" placeholder="搜索集团、子公司或在鄂主体" value={query} onChange={(e) => setQuery(e.target.value)} /></div><FilterSelect label="所在地" value={locationFilter} setValue={setLocationFilter} options={['湖北全部', '湖北武汉']} /><FilterSelect label="核验状态" value={verificationFilter} setValue={setVerificationFilter} options={['全部状态', '已核验', '待确认']} /></CardContent></Card>
-    <div className="mb-4 grid grid-cols-2 gap-2 md:grid-cols-6"><Metric value={String(verifiedLegalEntities)} label="已核验法人" /><Metric value={String(leafLegalEntities)} label="末级法人" /><Metric value={String(pendingRelations)} label="待确认关系" warning /><Metric value={String(openLegalEntityIds.size)} label="开放招聘主体" /><Metric value={String(nonLegalHiringUnits)} label="非独立用人单位" /><Metric value={asOf} label="数据截至" /></div>
-    <div className="grid gap-4 xl:grid-cols-[1fr_340px]"><Card className="border-0 bg-white shadow-sm ring-1 ring-slate-200/80"><CardHeader className="border-b border-slate-100"><CardTitle>湖北央国企控制关系</CardTitle><CardDescription>逐层展开可查看省属、市属主体和已定位的2027岗位</CardDescription></CardHeader><CardContent className="space-y-3 pt-1">{filteredTrees.length ? filteredTrees.map((root) => <TreeNode key={root.id} node={root} depth={0} unreadFor={unreadFor} markEntityRead={markEntityRead} />) : <EmptyState />}</CardContent></Card>
-      <Card className="h-fit border-0 bg-slate-950 text-white ring-0"><CardHeader><CardTitle>可审计覆盖清单</CardTitle><CardDescription className="text-slate-400">不再用已发现数量冒充完整率。</CardDescription></CardHeader><CardContent className="max-h-[680px] space-y-3 overflow-y-auto">{ownershipCoverageSets.map((set) => <div key={set.id} className="rounded-xl bg-white/5 p-3"><div className="flex items-start justify-between gap-2"><span className="text-xs text-slate-200">{set.label}</span><Badge className={set.completenessStatus === '官方清单已闭合' ? 'border-0 bg-emerald-400/15 text-emerald-200' : 'border-0 bg-amber-400/15 text-amber-200'}>{set.completenessStatus}</Badge></div><p className="mt-2 text-xs text-slate-400">已核验 {set.expectedNodeIds.length} 家 · 待确认 {set.pendingNodeIds.length} 家{set.officialDisclosedTotal === null ? ' · 官方未披露总数' : ` · 官方披露 ${set.officialDisclosedTotal} 家`}</p></div>)}<p className="text-xs leading-5 text-slate-400">招聘公告中的“所属单位”仅作候选发现；未取得股权或实际控制证据前均标记待确认。</p></CardContent></Card>
+    <div className="mb-4 grid grid-cols-2 gap-2 md:grid-cols-6"><Metric value={String(verifiedLegalEntities)} label="已核验法人" /><Metric value={String(leafLegalEntities)} label="末级法人" /><Metric value={String(pendingRelations)} label="待确认关系" warning /><Metric value={String(openLegalEntityIds.size)} label="开放招聘主体" /><Metric value={String(nonLegalHiringUnits)} label="非独立用人单位" /><Metric value={today} label="有效性日期" /></div>
+    <div className="grid gap-4 xl:grid-cols-[1fr_340px]"><Card className="border-0 bg-white shadow-sm ring-1 ring-slate-200/80"><CardHeader className="border-b border-slate-100"><CardTitle>湖北央国企有效控制链</CardTitle><CardDescription>上级主体仅作控制关系背景，投递链接指向明确标注的下属湖北用人单位</CardDescription></CardHeader><CardContent className="space-y-3 pt-1">{filteredTrees.length ? filteredTrees.map((root) => <TreeNode key={root.id} node={root} depth={0} openings={allOpenings} unreadFor={unreadFor} markEntityRead={markEntityRead} />) : <EmptyState />}</CardContent></Card>
+      <Card className="h-fit border-0 bg-slate-950 text-white ring-0"><CardHeader><CardTitle>有效链管理规则</CardTitle><CardDescription className="text-slate-400">公开集合按上海日期自动计算。</CardDescription></CardHeader><CardContent className="max-h-[680px] space-y-3 overflow-y-auto"><p className="text-xs leading-5 text-slate-300">仅收录已核验控制关系、2027届湖北岗位及 HTTPS 投递入口；明确截止日次日淘汰整条无有效岗位的链。截止日未披露时，7天未复核自动退出。访问异常只记录待复核，不推断已截止。</p>{visibleCoverageSets.map((set) => <div key={set.id} className="rounded-xl bg-white/5 p-3"><div className="flex items-start justify-between gap-2"><span className="text-xs text-slate-200">{set.label}</span><Badge className={set.completenessStatus === '官方清单已闭合' ? 'border-0 bg-emerald-400/15 text-emerald-200' : 'border-0 bg-amber-400/15 text-amber-200'}>{set.completenessStatus}</Badge></div><p className="mt-2 text-xs text-slate-400">已核验 {set.expectedNodeIds.length} 家 · 待确认 {set.pendingNodeIds.length} 家{set.officialDisclosedTotal === null ? ' · 官方未披露总数' : ` · 官方披露 ${set.officialDisclosedTotal} 家`}</p></div>)}</CardContent></Card>
     </div>
   </section>;
 }
 
-function TreeNode({ node, depth, unreadFor, markEntityRead }: { node: OwnershipNode; depth: number } & AlertUiProps) {
+function TreeNode({ node, depth, openings, unreadFor, markEntityRead }: { node: OwnershipNode; depth: number; openings: ReturnType<typeof activeOwnershipData>['activeOpenings'] } & AlertUiProps) {
   const [open, setOpen] = useState(node.level < 2);
   const edge = ownershipEdges.find((item) => item.childId === node.id);
   const coverage = ownershipCoverageSets.find((item) => item.parentId === node.id && item.targetLevel === node.level + 1);
   const hasChildren = Boolean(node.children?.length) || Boolean(coverage);
   const activeChannel = node.recruitmentChannels.find((channel) => channel.url && channel.status !== '已截止' && channel.match !== '暂无公开入口');
+  const descendantOpening = descendantApplication(node, openings);
+  const applicationUrl = activeChannel?.url ?? descendantOpening?.officialUrl;
+  const isDescendantLink = !activeChannel && Boolean(descendantOpening);
   const historicalChannel = node.recruitmentChannels.find((channel) => channel.url && channel.status === '已截止');
   const isFallbackChannel = activeChannel?.match === '集团兜底';
   const channelCheckedAt = activeChannel?.verifiedAt ?? historicalChannel?.verifiedAt ?? node.recruitmentChannels[0]?.verifiedAt;
   const unreadAlerts = unreadFor('ownership', node.id);
-  const openingCount = hubeiRecruitmentOpenings.filter((opening) => opening.legalEntityId === node.id && opening.status === '开放中').length;
+  const openingCount = openings.filter((opening) => opening.legalEntityId === node.id).length;
   const isLeafLegalEntity = node.level > 0 && !node.children?.length;
   const depthAccent = depth === 0 ? 'border-l-slate-700' : depth === 1 ? 'border-l-cyan-600' : depth === 2 ? 'border-l-cyan-300' : 'border-l-amber-300';
   return <Collapsible open={open} onOpenChange={setOpen} className={depth ? 'ownership-branch ml-4 border-l border-cyan-200/80 pl-4 sm:ml-5' : ''}>
@@ -334,9 +346,9 @@ function TreeNode({ node, depth, unreadFor, markEntityRead }: { node: OwnershipN
       {unreadAlerts.length > 0 && <span className="alert-pulse absolute right-2 top-2 z-10 size-2.5 rounded-full bg-red-500 shadow-[0_2px_8px_rgba(239,68,68,0.55)] ring-2 ring-white" role="status"><span className="sr-only">{node.name}有新的招聘信息</span></span>}
       {hasChildren ? <CollapsibleTrigger className="flex size-8 shrink-0 items-center justify-center rounded-lg text-slate-500 transition-[background-color,color,transform] duration-200 hover:bg-white hover:text-cyan-700 active:scale-95" aria-label={open ? '收起下级主体' : '展开下级主体'}><ChevronRight className={`size-4 transition-transform duration-200 ${open ? 'rotate-90' : ''}`} /></CollapsibleTrigger> : <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white text-xs font-semibold text-cyan-700 transition-colors group-hover/tree:bg-cyan-50">L{node.level}</span>}
       <div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-1.5"><strong className="text-sm text-slate-950">{node.name}</strong><Badge variant="outline">L{node.level}</Badge>{node.level > 0 && <Badge className="border-0 bg-slate-100 text-slate-700">受控法人</Badge>}{isLeafLegalEntity && <Badge className="border-0 bg-violet-50 text-violet-800">末级法人</Badge>}{openingCount > 0 && <Badge className="border-0 bg-emerald-50 text-emerald-800">2027开放岗位 {openingCount}</Badge>}{node.locationTags.some((tag) => tag.includes('武汉')) && <Badge className="border-0 bg-cyan-50 text-cyan-800">武汉</Badge>}{node.verificationStatus === '待确认' && <Badge className="border-0 bg-amber-50 text-amber-800">待确认</Badge>}{isFallbackChannel && <Badge className="border-0 bg-amber-50 text-amber-800">未定位到本公司</Badge>}{coverage && <Badge variant="outline">直属 {coverage.expectedNodeIds.length}核验/{coverage.pendingNodeIds.length}待确认</Badge>}</div><span className="mt-1 block text-xs leading-5 text-slate-500">{node.category} · {edge?.controlType ?? node.controlType}{edge?.directOwnershipPercent !== undefined ? ` ${edge.directOwnershipPercent}%` : ''}{edge?.aggregateOwnershipPercent !== undefined ? `（合计${edge.aggregateOwnershipPercent}%）` : ''}{node.relation ? ` · ${node.relation}` : ''}</span><span className="block text-xs text-slate-400">{node.registeredLocation ? `注册地 ${node.registeredLocation} · ` : ''}{node.unifiedSocialCreditCode ? `统一社会信用代码 ${node.unifiedSocialCreditCode} · ` : node.level >= 3 ? '统一社会信用代码待补 · ' : ''}{node.locationTags.join(' · ')} · 核验 {node.verifiedAt}</span>{node.level > 0 && <span className="mt-1 block text-xs text-slate-500">招聘渠道：{activeChannel ? `${activeChannel.type} · ${activeChannel.match} · ${activeChannel.status}` : '未发现开放岗位'}{channelCheckedAt ? ` · 核验 ${channelCheckedAt}` : ''}{historicalChannel && <>{' · '}<a className="text-cyan-700 underline-offset-2 hover:underline" href={historicalChannel.url} target="_blank" rel="noreferrer">招聘证据（已截止）</a></>}</span>}</div>
-      <div className="flex shrink-0 flex-wrap items-center justify-end gap-1"><Button nativeButton={false} size="icon-sm" variant="ghost" render={<a href={node.sourceUrl} target="_blank" rel="noreferrer" aria-label={`查看${node.name}关系来源`} />} className="transition-transform hover:-translate-y-0.5"><FileCheck2 className="size-4" /></Button>{activeChannel?.url ? <Button nativeButton={false} size="sm" variant="outline" render={<a href={activeChannel.url} target="_blank" rel="noreferrer" onClick={() => markEntityRead('ownership', node.id)} aria-label={`${node.name}${isFallbackChannel ? '集团招聘入口' : '招聘入口'}`} />} className="group/action">{isFallbackChannel ? '集团招聘入口' : '招聘入口'}<ExternalLink className="size-3.5 transition-transform duration-200 group-hover/action:-translate-y-0.5 group-hover/action:translate-x-0.5" /></Button> : node.level > 0 ? <span className="rounded-md border border-dashed border-slate-300 px-2 py-1 text-xs text-slate-500">暂无公开招聘入口</span> : null}</div>
+      <div className="flex shrink-0 flex-wrap items-center justify-end gap-1"><Button nativeButton={false} size="icon-sm" variant="ghost" render={<a href={node.sourceUrl} target="_blank" rel="noreferrer" aria-label={`查看${node.name}关系来源`} />} className="transition-transform hover:-translate-y-0.5"><FileCheck2 className="size-4" /></Button>{applicationUrl ? <Button nativeButton={false} size="sm" variant="outline" render={<a href={applicationUrl} target="_blank" rel="noreferrer" onClick={() => markEntityRead('ownership', node.id)} aria-label={`${node.name}${isDescendantLink ? '下属湖北单位投递入口' : '招聘入口'}`} />} className="group/action">{isDescendantLink ? '下属湖北单位投递' : '招聘入口'}<ExternalLink className="size-3.5 transition-transform duration-200 group-hover/action:-translate-y-0.5 group-hover/action:translate-x-0.5" /></Button> : null}</div>
     </div>
-    {hasChildren && <CollapsibleContent className="tree-content-motion space-y-2">{node.children?.map((child) => <TreeNode key={child.id} node={child} depth={depth + 1} unreadFor={unreadFor} markEntityRead={markEntityRead} />)}{coverage && !node.children?.length && <div className="ml-5 rounded-xl border border-dashed border-slate-200 bg-white p-3 text-xs text-slate-500">三级子夹层已建立：已核验 0 家、待确认 0 家；{coverage.completenessStatus}，等待直接控制证据。</div>}</CollapsibleContent>}
+    {hasChildren && <CollapsibleContent className="tree-content-motion space-y-2">{node.children?.map((child) => <TreeNode key={child.id} node={child} depth={depth + 1} openings={openings} unreadFor={unreadFor} markEntityRead={markEntityRead} />)}{coverage && !node.children?.length && <div className="ml-5 rounded-xl border border-dashed border-slate-200 bg-white p-3 text-xs text-slate-500">三级子夹层已建立：已核验 0 家、待确认 0 家；{coverage.completenessStatus}，等待直接控制证据。</div>}</CollapsibleContent>}
   </Collapsible>;
 }
 

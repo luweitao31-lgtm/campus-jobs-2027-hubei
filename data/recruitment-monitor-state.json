@@ -1,1 +1,84 @@
-{ "generatedAt": "2026-09-22T00:00:00+08:00", "entries": [] }
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-09-23T08:16:19.723Z",
+  "entries": [
+    {
+      "key": "ownership:chinatelecom-corp",
+      "module": "ownership",
+      "entityId": "chinatelecom-corp",
+      "companyName": "中国电信股份有限公司",
+      "isOpen": true,
+      "fingerprint": "2jit6l",
+      "signalCount": 0,
+      "channelLabel": "中国电信湖北公司2027年度校园招聘",
+      "channelUrl": "https://job.chinatelecom.com.cn/wt/TELE/web/index#/postinquiry?data=eyJrZXkiOjU4MTYyMywidHlwZSI6IjEiLCJyZWNydWl0UHJvamVjdCI6IiIsInJlY3J1aXRQcm9qZWN0TmFtZSI6IiJ9",
+      "sourceUrl": "https://job.lzu.edu.cn/html/74/article/2026/91782.html",
+      "checkedAt": "2026-09-23T08:16:19.723Z"
+    },
+    {
+      "key": "ownership:chinamobile-hubei",
+      "module": "ownership",
+      "entityId": "chinamobile-hubei",
+      "companyName": "中国移动通信集团湖北有限公司",
+      "isOpen": true,
+      "fingerprint": "dtruer",
+      "signalCount": 1,
+      "channelLabel": "湖北移动2027校园招聘",
+      "channelUrl": "https://hbydxy.zhaopin.com/",
+      "sourceUrl": "https://wust.91wllm.cn/campus/view/id/1004787",
+      "checkedAt": "2026-09-23T08:16:19.723Z"
+    },
+    {
+      "key": "employers:hbjt",
+      "module": "employers",
+      "entityId": "hbjt",
+      "companyName": "湖北交通投资集团有限公司",
+      "isOpen": false,
+      "fingerprint": "115xavx",
+      "signalCount": 0,
+      "channelLabel": "企业官网",
+      "channelUrl": "https://www.hbtt.com/",
+      "sourceUrl": "https://www.hbtt.com/",
+      "checkedAt": "2026-09-23T08:16:19.723Z"
+    },
+    {
+      "key": "employers:hbui",
+      "module": "employers",
+      "entityId": "hbui",
+      "companyName": "湖北联投集团有限公司",
+      "isOpen": false,
+      "fingerprint": "1yfjfos",
+      "signalCount": 0,
+      "channelLabel": "企业官网",
+      "channelUrl": "https://www.hbslft.com/",
+      "sourceUrl": "https://www.hbslft.com/",
+      "checkedAt": "2026-09-23T08:16:19.723Z"
+    },
+    {
+      "key": "employers:whmetro",
+      "module": "employers",
+      "entityId": "whmetro",
+      "companyName": "武汉地铁集团有限公司",
+      "isOpen": false,
+      "fingerprint": "10a3wwc",
+      "signalCount": 0,
+      "channelLabel": "企业官网",
+      "channelUrl": "https://www.wuhanrt.com/",
+      "sourceUrl": "https://www.wuhanrt.com/",
+      "checkedAt": "2026-09-23T08:16:19.723Z"
+    },
+    {
+      "key": "employers:dfmc",
+      "module": "employers",
+      "entityId": "dfmc",
+      "companyName": "东风汽车集团有限公司",
+      "isOpen": false,
+      "fingerprint": "1cgcyge",
+      "signalCount": 0,
+      "channelLabel": "东风校园招聘",
+      "channelUrl": "https://www.dfmc.com.cn/zhaopin/xiaoyuanzhaopin.html",
+      "sourceUrl": "https://www.dfmc.com.cn/zhaopin/xiaoyuanzhaopin.html",
+      "checkedAt": "2026-09-23T08:16:19.723Z"
+    }
+  ]
+}

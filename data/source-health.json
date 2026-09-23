@@ -1,1 +1,844 @@
-{ "completedAt": "2026-09-22T00:00:00+08:00", "sources": [] }
+{
+  "schemaVersion": 2,
+  "completedAt": "2026-09-23T08:16:19.723Z",
+  "results": [
+    {
+      "id": "src-hubei-sasac",
+      "name": "湖北省国资委省属企业公开信息",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 412,
+      "health": "异常",
+      "elapsedMs": 214,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-wuhan-sasac",
+      "name": "武汉市国资委市属企业名单",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 176,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-91wllm",
+      "name": "湖北24365大学生就业服务平台",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 403,
+      "health": "异常",
+      "elapsedMs": 168,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-jobhb",
+      "name": "湖北人才网",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 299,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-hubei-rst",
+      "name": "湖北省人力资源和社会保障厅",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 267,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-whu-career",
+      "name": "武汉大学就业信息网",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 258,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-hust-career",
+      "name": "华中科技大学就业信息网",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 1335,
+      "extractedLeads": 9
+    },
+    {
+      "id": "src-whut-career",
+      "name": "武汉理工大学就业信息网",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 131,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-ccnu-career",
+      "name": "华中师范大学就业信息网",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 289,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cug-career",
+      "name": "中国地质大学武汉就业信息网",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 82,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-dfmc-career",
+      "name": "东风汽车校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 204,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cmcc-career",
+      "name": "中国移动招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 226,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-public-jobs",
+      "name": "中国公共招聘网名企招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 371,
+      "extractedLeads": 9
+    },
+    {
+      "id": "src-ncss",
+      "name": "国家大学生就业服务平台",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 654,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-valeo-career",
+      "name": "法雷奥招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 2441,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-honeywell-career",
+      "name": "霍尼韦尔中国招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 817,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cummins-career",
+      "name": "康明斯中国招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 814,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-forvia-career",
+      "name": "佛瑞亚招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 3175,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-lear-career",
+      "name": "李尔招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 707,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-webasto-career",
+      "name": "伟巴斯特招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 1836,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-bosch-career",
+      "name": "博世中国校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 361,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-siemens-career",
+      "name": "西门子中国2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 675,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-pwc-career",
+      "name": "普华永道中国2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 403,
+      "health": "异常",
+      "elapsedMs": 854,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-unilever-career",
+      "name": "联合利华中国招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 1547,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-zf-career",
+      "name": "采埃孚招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 10509,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-aptiv-career",
+      "name": "安波福招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 2659,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-visteon-career",
+      "name": "伟世通招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 429,
+      "health": "异常",
+      "elapsedMs": 663,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-adient-career",
+      "name": "安道拓招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 599,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-schneider-career",
+      "name": "施耐德电气招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 1224,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-abb-career",
+      "name": "ABB招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 1289,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-michelin-career",
+      "name": "米其林招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 589,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-magna-career",
+      "name": "麦格纳招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 3903,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-mahle-career",
+      "name": "马勒招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 4120,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-dhl-career",
+      "name": "DHL招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 1412,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-deloitte-career",
+      "name": "德勤中国2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 803,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-ey-career",
+      "name": "安永中国学生招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 404,
+      "health": "异常",
+      "elapsedMs": 700,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-kpmg-career",
+      "name": "毕马威中国招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 505,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-whfhg-2027-lzu",
+      "name": "武汉金控2027校园招聘（兰州大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 412,
+      "health": "异常",
+      "elapsedMs": 220,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-whfhg-2027-gemu",
+      "name": "武汉金控2027校园招聘（格木）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 264,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cscec-recruit",
+      "name": "中国建筑校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 461,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cscec3-2027-hebut",
+      "name": "中建三局2027校园招聘（河北工业大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 306,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cr11-2027-lzu",
+      "name": "中铁十一局2027校园招聘（兰州大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 412,
+      "health": "异常",
+      "elapsedMs": 68,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cr11-2027-jlu",
+      "name": "中铁十一局2027招聘（吉林大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 412,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cfmcc-2027-official",
+      "name": "中国一冶2027秋季校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 271,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-ceec-2027-guopin",
+      "name": "中国能建2027校园招聘（国聘）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 217,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cggc-2027-lzu",
+      "name": "葛洲坝集团2027校园招聘（兰州大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 412,
+      "health": "异常",
+      "elapsedMs": 59,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cjwsjy-2027-official",
+      "name": "长江设计集团2027秋季招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 55,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-jztey-2027-hust",
+      "name": "九州通2027管培生校招（华中科技大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 243,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-jztey-2027-cumtb",
+      "name": "九州通2027招聘（中国矿业大学北京）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 585,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-guide-2027-ncepu",
+      "name": "高德红外2027校招（华北电力大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 199,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-guide-2027-hebut",
+      "name": "高德红外2027校招（河北工业大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 170,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cummins-2027-official",
+      "name": "康明斯2027武汉岗位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 1223,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cummins-2027-91wllm",
+      "name": "康明斯2027校园招聘（湖北高校就业网）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 403,
+      "health": "异常",
+      "elapsedMs": 286,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-boc-2027-official",
+      "name": "中国银行官方2027校园招聘公告",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 383,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-icbc-hb-2027-official",
+      "name": "工商银行官方校园招聘平台（湖北省分行）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 106,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-ccb-hb-2027-official",
+      "name": "建设银行官方湖北省分行校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 127,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-abc-hb-2027-official",
+      "name": "农业银行官方校园招聘平台（湖北省分行）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 92,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-bocom-hb-2027-official",
+      "name": "交通银行官方校园招聘平台（湖北省分行）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 91,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-psbc-hb-2027-official",
+      "name": "邮储银行官方2027校园招聘（湖北省分行）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 80,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cmb-wh-2027-official",
+      "name": "招商银行官方校园招聘平台（武汉分行）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 199,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-spdb-wh-2027-official",
+      "name": "浦发银行官方校园招聘平台（武汉分行）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 432,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-ct-hb-2027-official",
+      "name": "中国电信官方2027校园招聘（湖北公司）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 416,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cu-hb-2027-official",
+      "name": "中国联通官方校园招聘平台（湖北分公司）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 237,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-post-hb-2027-official",
+      "name": "中国邮政官方2027联合校园招聘公告（湖北单位）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 143,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-ymtc-2027-official",
+      "name": "长江存储官方2027校园招聘平台",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 229,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-xiaomi-wh-2027-official",
+      "name": "小米官方2027校园招聘武汉岗位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 257,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-lenovo-wh-2027-official",
+      "name": "联想官方2027校园招聘武汉岗位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 252,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-boe-wh-2027-official",
+      "name": "京东方官方2027校园招聘武汉岗位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 445,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-wuxi-wh-2027-official",
+      "name": "药明康德官方2027校园招聘武汉岗位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 230,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-yanfeng-wh-2027-official",
+      "name": "延锋官方2027校园招聘武汉岗位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 138,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-huawei-wh-2027-official",
+      "name": "华为官方2027校园招聘武汉岗位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 62,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-ey-2027-official",
+      "name": "安永官方2027校园招聘武汉职位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 173,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-nestle-2027-official",
+      "name": "雀巢官方学生招聘及2027武汉职位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 403,
+      "health": "异常",
+      "elapsedMs": 664,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-danone-2027-official",
+      "name": "达能官方2027校园招聘武汉职位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 86,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-accenture-2027-official",
+      "name": "埃森哲官方2027校园招聘武汉职位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 84,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-tencent-2027-official",
+      "name": "腾讯官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 184,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-alibaba-2027-official",
+      "name": "阿里巴巴官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 462,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-bytedance-2027-official",
+      "name": "字节跳动官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 757,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-jd-2027-official",
+      "name": "京东官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 186,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-meituan-2027-official",
+      "name": "美团官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 205,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-baidu-2027-official",
+      "name": "百度官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 231,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-netease-2027-official",
+      "name": "网易官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 65,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-pdd-2027-official",
+      "name": "拼多多官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 329,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-catl-2027-official",
+      "name": "宁德时代官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 45,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-midea-2027-official",
+      "name": "美的官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 92,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-oppo-2027-official",
+      "name": "OPPO官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 73,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-vivo-2027-official",
+      "name": "vivo官方2027校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "正常",
+      "elapsedMs": 129,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-pwc-2027-wuhan-lzu",
+      "name": "普华永道2027武汉职位（兰州大学）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 412,
+      "health": "异常",
+      "elapsedMs": 60,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-deloitte-2027-wuhan",
+      "name": "德勤2027武汉职位",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 171,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-crrc-yangtze-2027-official",
+      "name": "中国中车官方2027校园招聘（中车长江）",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 308,
+      "extractedLeads": 0
+    },
+    {
+      "id": "src-cmcc-group-2027-official",
+      "name": "中国移动官方2027全国校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": null,
+      "health": "异常",
+      "elapsedMs": 106,
+      "extractedLeads": 0,
+      "message": "fetch failed"
+    },
+    {
+      "id": "src-ct-group-2027-official",
+      "name": "中国电信官方2027全国校园招聘",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "内容待确认",
+      "elapsedMs": 297,
+      "extractedLeads": 0
+    }
+  ]
+}

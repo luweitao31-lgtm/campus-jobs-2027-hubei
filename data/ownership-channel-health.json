@@ -1,1 +1,30 @@
-{ "completedAt": "2026-09-22T00:00:00+08:00", "channels": [] }
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-09-23T08:16:19.723Z",
+  "results": [
+    {
+      "nodeId": "chinatelecom-corp",
+      "companyName": "中国电信股份有限公司",
+      "label": "中国电信湖北公司2027年度校园招聘",
+      "url": "https://job.chinatelecom.com.cn/wt/TELE/web/index#/postinquiry?data=eyJrZXkiOjU4MTYyMywidHlwZSI6IjEiLCJyZWNydWl0UHJvamVjdCI6IiIsInJlY3J1aXRQcm9qZWN0TmFtZSI6IiJ9",
+      "match": "单位已定位",
+      "declaredStatus": "可投递",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "可访问，归属需人工复核",
+      "elapsedMs": 151
+    },
+    {
+      "nodeId": "chinamobile-hubei",
+      "companyName": "中国移动通信集团湖北有限公司",
+      "label": "湖北移动2027校园招聘",
+      "url": "https://hbydxy.zhaopin.com/",
+      "match": "公司专属",
+      "declaredStatus": "可投递",
+      "checkedAt": "2026-09-23T08:16:19.723Z",
+      "httpStatus": 200,
+      "health": "可访问，归属需人工复核",
+      "elapsedMs": 207
+    }
+  ]
+}

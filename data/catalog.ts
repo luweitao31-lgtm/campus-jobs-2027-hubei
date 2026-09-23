@@ -37,6 +37,8 @@ export const ownershipEvidence: OwnershipEvidence[] = [
   { id: 'ev-sasac-central-enterprise-list-2026', title: '国务院国资委央企名录（中国电信集团有限公司）', publisher: '国务院国资委', url: 'http://wap.sasac.gov.cn/n2588045/n27271785/n27271792/c14159097/content.html', sourceType: '监管披露', verifiedAt: checked },
   { id: 'ev-chinatelecom-2025-annual-report', title: '中国电信股份有限公司2025年年度报告', publisher: '中国电信股份有限公司', url: 'https://www.chinatelecom-h.com/sc/ir/report/annual2025_ashare.pdf', sourceType: '企业年报', verifiedAt: checked },
   { id: 'ev-chinatelecom-hubei-2027-campus', title: '中国电信湖北公司2027校园招聘火热进行中', publisher: '兰州大学就业网', url: 'https://job.lzu.edu.cn/html/74/article/2026/91782.html', sourceType: '招聘公告', verifiedAt: checked },
+  { id: 'ev-chinamobile-2025-annual-report', title: '中国移动有限公司2025年年度报告', publisher: '香港交易所', url: 'https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300753_c.pdf', sourceType: '企业年报', verifiedAt: '2026-09-23' },
+  { id: 'ev-chinamobile-hubei-2027-campus', title: '中国移动通信集团湖北有限公司2027校园招聘公告', publisher: '武汉科技大学就业信息网', url: 'https://wust.91wllm.cn/campus/view/id/1004787', sourceType: '招聘公告', verifiedAt: '2026-09-23' },
 ];
 const chinatelecomCorpNode: OwnershipNode = {
   id: 'chinatelecom-corp', name: '中国电信股份有限公司', category: '央企控股上市公司', level: 2, entityKind: '控股企业',
@@ -51,19 +53,42 @@ const chinatelecomGroupNode: OwnershipNode = {
   verificationStatus: '已核验', coverageSetId: 'coverage-sasac-chinatelecom', relation: '国务院国资委央企名录列示的中央企业',
   sourceUrl: 'https://www.chinatelecom.com.cn/', recruitmentChannels: [], children: [chinatelecomCorpNode],
 };
+const chinamobileHubeiNode: OwnershipNode = {
+  id: 'chinamobile-hubei', name: '中国移动通信集团湖北有限公司', category: '在鄂央企法人', level: 3, entityKind: '控股企业',
+  locationTags: ['湖北全省'], controlType: '全资', ownershipPercent: 100, registeredLocation: '湖北省武汉市',
+  verifiedAt: '2026-09-23', verificationStatus: '已核验', relation: '中国移动有限公司通过附属公司间接持有100%权益',
+  sourceUrl: ownershipEvidence[3].url,
+  recruitmentChannels: [{ label: '湖北移动2027校园招聘', type: '公司招聘官网', match: '公司专属', status: '可投递', url: 'https://hbydxy.zhaopin.com/', appliesToCompanyName: '中国移动通信集团湖北有限公司', evidenceUrl: ownershipEvidence[4].url, verifiedAt: '2026-09-23' }],
+};
+const chinamobileListedNode: OwnershipNode = {
+  id: 'chinamobile-listed', name: '中国移动有限公司', category: '央企控股上市公司', level: 2, entityKind: '控股企业',
+  locationTags: ['湖北全省', '全国'], controlType: '控股', ownershipPercent: 68.8, verifiedAt: '2026-09-23',
+  verificationStatus: '已核验', relation: '中国移动通信集团有限公司直接和间接持有约68.80%已发行股份',
+  sourceUrl: ownershipEvidence[3].url, recruitmentChannels: [], children: [chinamobileHubeiNode],
+};
+const chinamobileGroupNode: OwnershipNode = {
+  id: 'chinamobile-group', name: '中国移动通信集团有限公司', category: '中央企业', level: 1, entityKind: '集团',
+  locationTags: ['全国'], controlType: '履行出资人职责', registeredLocation: '北京市', verifiedAt: '2026-09-23',
+  verificationStatus: '已核验', relation: '国务院国资委央企名录列示的中央企业',
+  sourceUrl: ownershipEvidence[0].url, recruitmentChannels: [], children: [chinamobileListedNode],
+};
 const sasacNode: OwnershipNode = {
   id: 'sasac-central', name: '国务院国有资产监督管理委员会', category: '中央企业监管机构', level: 0, entityKind: '监管机构',
   locationTags: ['全国'], controlType: '履行出资人职责', verifiedAt: checked, verificationStatus: '已核验',
-  sourceUrl: ownershipEvidence[0].url, recruitmentChannels: [], children: [chinatelecomGroupNode],
+  sourceUrl: ownershipEvidence[0].url, recruitmentChannels: [], children: [chinatelecomGroupNode, chinamobileGroupNode],
 };
 export const ownershipTrees: OwnershipNode[] = [sasacNode];
 export const ownershipCoverageSets: OwnershipCoverageSet[] = [
-  { id: 'coverage-sasac-chinatelecom', parentId: 'sasac-central', label: '中国电信单链核验集', scope: '本次仅核验国务院国资委至中国电信的一条控制链，不代表央企名录完整覆盖', asOf: checked, targetLevel: 1, officialDisclosedTotal: null, expectedNodeIds: ['chinatelecom-group'], pendingNodeIds: [], completenessStatus: '官方未披露总数', sourceUrls: [ownershipEvidence[0].url] },
+  { id: 'coverage-sasac-chinatelecom', parentId: 'sasac-central', label: '已核验央企链', scope: '本次仅核验中国电信和中国移动两条在鄂招聘链，不代表央企名录完整覆盖', asOf: '2026-09-23', targetLevel: 1, officialDisclosedTotal: null, expectedNodeIds: ['chinatelecom-group', 'chinamobile-group'], pendingNodeIds: [], completenessStatus: '官方未披露总数', sourceUrls: [ownershipEvidence[0].url] },
   { id: 'coverage-chinatelecom-listed', parentId: 'chinatelecom-group', label: '中国电信股份控制关系核验', scope: '依据中国电信股份有限公司2025年年度报告核验控股股东及持股比例', asOf: checked, targetLevel: 2, officialDisclosedTotal: 1, expectedNodeIds: ['chinatelecom-corp'], pendingNodeIds: [], completenessStatus: '官方清单已闭合', sourceUrls: [ownershipEvidence[1].url] },
+  { id: 'coverage-chinamobile-listed', parentId: 'chinamobile-group', label: '中国移动控制关系核验', scope: '只覆盖与湖北移动2027招聘有关的上市公司及湖北法人，不代表全部子公司', asOf: '2026-09-23', targetLevel: 2, officialDisclosedTotal: null, expectedNodeIds: ['chinamobile-listed'], pendingNodeIds: [], completenessStatus: '官方未披露总数', sourceUrls: [ownershipEvidence[3].url] },
 ];
 export const ownershipEdges: OwnershipEdge[] = [
   { id: 'edge-sasac-chinatelecom', parentId: 'sasac-central', childId: 'chinatelecom-group', controlType: '履行出资人职责', controlBasis: '国务院国资委央企名录列示中国电信集团有限公司', evidenceIds: ['ev-sasac-central-enterprise-list-2026'], asOf: checked, verificationStatus: '已核验' },
   { id: 'edge-chinatelecom-group-corp', parentId: 'chinatelecom-group', childId: 'chinatelecom-corp', controlType: '控股', directOwnershipPercent: 63.9, controlBasis: '中国电信股份有限公司2025年年度报告披露中国电信集团持有约63.90%已发行股本', evidenceIds: ['ev-chinatelecom-2025-annual-report'], asOf: checked, verificationStatus: '已核验' },
+  { id: 'edge-sasac-chinamobile', parentId: 'sasac-central', childId: 'chinamobile-group', controlType: '履行出资人职责', controlBasis: '国务院国资委央企名录列示中国移动通信集团有限公司', evidenceIds: ['ev-sasac-central-enterprise-list-2026'], asOf: '2026-09-23', verificationStatus: '已核验' },
+  { id: 'edge-chinamobile-group-listed', parentId: 'chinamobile-group', childId: 'chinamobile-listed', controlType: '控股', aggregateOwnershipPercent: 68.8, controlBasis: '中国移动有限公司2025年年报披露中国移动集团直接和间接持有约68.80%已发行股份', evidenceIds: ['ev-chinamobile-2025-annual-report'], asOf: '2026-09-23', verificationStatus: '已核验' },
+  { id: 'edge-chinamobile-listed-hubei', parentId: 'chinamobile-listed', childId: 'chinamobile-hubei', controlType: '全资', aggregateOwnershipPercent: 100, controlBasis: '中国移动有限公司2025年年报附属公司表列示湖北移动100%间接权益；此边为间接控制关系，不代表直接持股', evidenceIds: ['ev-chinamobile-2025-annual-report'], asOf: '2026-09-23', verificationStatus: '已核验' },
 ];
 export const awards: AwardEntry[] = [
   { id: 'employer-hbjt-2025', companyId: 'hbjt', year: 2025, listName: '湖北重点雇主观察（非评奖）', awardTier: '省属重点企业', hubeiBasis: '湖北省国资委公开省属企业名录', sourceUrl: sources[0].url },

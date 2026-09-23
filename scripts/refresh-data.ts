@@ -486,7 +486,9 @@ if (write) {
     writeFile(healthPath, `${JSON.stringify({ schemaVersion: 2, completedAt, results: report.sources }, null, 2)}\n`, 'utf8'),
     writeFile(leadsPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8'),
     writeFile(syncPath, `${JSON.stringify({ schemaVersion: 1, completedAt, target, targetMet, counters: report.counters, warnings: report.warnings }, null, 2)}\n`, 'utf8'),
-    writeFile(directoryPath, `${JSON.stringify(directoryReport, null, 2)}\n`, 'utf8'),
+    ...(targetMet && directoryReport.pendingCount === 0 && directoryReport.hubeiShare >= 0.7 && directoryReport.foreignHubeiShare >= 0.7
+      ? [writeFile(directoryPath, `${JSON.stringify(directoryReport, null, 2)}\n`, 'utf8')]
+      : []),
     writeFile(ownershipChannelHealthPath, `${JSON.stringify({ schemaVersion: 1, completedAt, results: ownershipChannelChecks }, null, 2)}\n`, 'utf8'),
     writeFile(alertPath, `${JSON.stringify(alertReport, null, 2)}\n`, 'utf8'),
     writeFile(monitorStatePath, `${JSON.stringify({ schemaVersion: 1, completedAt, entries: monitorEntries }, null, 2)}\n`, 'utf8'),

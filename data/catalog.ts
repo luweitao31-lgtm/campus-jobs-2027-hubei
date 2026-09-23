@@ -58,7 +58,7 @@ const chinamobileHubeiNode: OwnershipNode = {
   locationTags: ['湖北全省'], controlType: '全资', ownershipPercent: 100, registeredLocation: '湖北省武汉市',
   verifiedAt: '2026-09-23', verificationStatus: '已核验', relation: '中国移动有限公司通过附属公司间接持有100%权益',
   sourceUrl: ownershipEvidence[3].url,
-  recruitmentChannels: [{ label: '湖北移动2027校园招聘', type: '公司招聘官网', match: '公司专属', status: '可投递', url: 'https://hbydxy.zhaopin.com/', appliesToCompanyName: '中国移动通信集团湖北有限公司', evidenceUrl: ownershipEvidence[4].url, verifiedAt: '2026-09-23' }],
+  recruitmentChannels: [{ label: '湖北移动2027校园招聘职位列表', type: '公司招聘官网', match: '公司专属', status: '可投递', url: 'https://hbydxy.zhaopin.com/post/index.html', appliesToCompanyName: '中国移动通信集团湖北有限公司', evidenceUrl: ownershipEvidence[4].url, verifiedAt: '2026-09-23' }],
 };
 const chinamobileListedNode: OwnershipNode = {
   id: 'chinamobile-listed', name: '中国移动有限公司', category: '央企控股上市公司', level: 2, entityKind: '控股企业',

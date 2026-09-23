@@ -50,7 +50,7 @@ function flatten(nodes: OwnershipNode[]): OwnershipNode[] {
   return nodes.flatMap((node) => [node, ...flatten(node.children ?? [])]);
 }
 
-export function descendantApplication(node: OwnershipNode, openings: RecruitmentOpening[]): RecruitmentOpening | undefined {
+export function descendantApplications(node: OwnershipNode, openings: RecruitmentOpening[]): RecruitmentOpening[] {
   const descendants = new Set(flatten([node]).map((item) => item.id));
-  return openings.find((opening) => opening.legalEntityId && descendants.has(opening.legalEntityId));
+  return openings.filter((opening) => opening.legalEntityId && descendants.has(opening.legalEntityId));
 }
